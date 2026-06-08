@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
       <nav className="navbar" style={{ position: 'relative', background: '#fff', borderBottom: '1px solid #eee' }}>
         <div className="container navbar-inner">
           <Link to="/" className="nav-logo">
-            <div className="nav-logo-icon" style={{ background: 'var(--green)', color: '#fff', width: '38px', height: '38px', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>A</div>
+            <img src="/logo-asistentoko.webp" alt="AsistenToko Logo" style={{height: '38px'}} />
             <span className="nav-logo-text"><span style={{color:'#0F5132'}}>Asisten</span><span style={{color:'#16A34A'}}>Toko</span></span>
           </Link>
           <div className="nav-actions">

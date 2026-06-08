@@ -2,7 +2,7 @@ import { useEffect, useRef, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import '../index.css'
 
-const APP_URL = '/auth/signin'
+const APP_URL = 'https://app.asistentoko.com'
 
 export default function Home() {
   const appRef = useRef<HTMLDivElement>(null)

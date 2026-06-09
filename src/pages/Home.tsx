@@ -160,7 +160,7 @@ export default function Home() {
             <a href="#harga" className="nav-link">Harga</a>
           </div>
           <div className="nav-actions">
-            <a href="https://app.asistentoko.com" className="nav-signin" id="nav-signin">Masuk</a>
+            <a href={APP_URL} className="nav-signin" id="nav-signin">Masuk</a>
             <a href="#harga" className="btn-primary" style={{ padding: '10px 22px', fontSize: '14px' }} id="nav-cta">Mulai Sekarang →</a>
           </div>
         </div>

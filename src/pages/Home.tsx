@@ -7,14 +7,7 @@ const APP_URL = 'https://app.asistentoko.com'
 export default function Home() {
   const appRef = useRef<HTMLDivElement>(null)
 
-  // ===== CTA Links =====
-  const setCTALinks = useCallback(() => {
-    const ids = ['nav-signin', 'nav-cta', 'hero-cta', 'pricing-monthly', 'pricing-quarterly', 'pricing-yearly', 'final-cta']
-    ids.forEach(id => {
-      const el = document.getElementById(id) as HTMLAnchorElement | null
-      if (el) el.href = APP_URL
-    })
-  }, [])
+  // CTA links are now hardcoded in the JSX
 
   // ===== Cursor Glow =====
   const setupCursorGlow = useCallback(() => {
@@ -138,7 +131,6 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    setCTALinks()
     const cleanups = [
       setupCursorGlow(),
       setupNavbarScroll(),
@@ -148,7 +140,7 @@ export default function Home() {
       setupNavActive(),
     ]
     return () => cleanups.forEach(fn => fn?.())
-  }, [setCTALinks, setupCursorGlow, setupNavbarScroll, setupReveal, setupFAQ, setupCounters, setupNavActive])
+  }, [setupCursorGlow, setupNavbarScroll, setupReveal, setupFAQ, setupCounters, setupNavActive])
 
   return (
     <div ref={appRef}>
@@ -158,8 +150,8 @@ export default function Home() {
       <nav className="navbar">
         <div className="container navbar-inner">
           <a href="#" className="nav-logo">
-            <img src="/logo-asistentoko.webp" alt="AsistenToko Logo" style={{height: '38px'}} />
-            <span className="nav-logo-text"><span style={{color:'#0F5132'}}>Asisten</span><span style={{color:'#16A34A'}}>Toko</span></span>
+            <img src="/logo-asistentoko.webp" alt="AsistenToko Logo" style={{ height: '38px' }} />
+            <span className="nav-logo-text"><span style={{ color: '#0F5132' }}>Asisten</span><span style={{ color: '#16A34A' }}>Toko</span></span>
           </a>
           <div className="nav-links">
             <a href="#fitur" className="nav-link">Fitur</a>
@@ -168,8 +160,8 @@ export default function Home() {
             <a href="#harga" className="nav-link">Harga</a>
           </div>
           <div className="nav-actions">
-            <a href="#" className="nav-signin" id="nav-signin">Masuk</a>
-            <a href="#" className="btn-primary" style={{padding:'10px 22px',fontSize:'14px'}} id="nav-cta">Mulai Sekarang →</a>
+            <a href="https://app.asistentoko.com" className="nav-signin" id="nav-signin">Masuk</a>
+            <a href="#harga" className="btn-primary" style={{ padding: '10px 22px', fontSize: '14px' }} id="nav-cta">Mulai Sekarang →</a>
           </div>
         </div>
       </nav>
@@ -186,8 +178,8 @@ export default function Home() {
                 AI-Powered · Scan · Simple
               </div>
               <h1 className="hero-title">
-                Pencatatan Instan,<br/>
-                Cukup <span className="highlight" style={{lineHeight: '100px'}}>Scan</span> Produk<br/>
+                Pencatatan Instan,<br />
+                Cukup <span className="highlight" style={{ lineHeight: '100px' }}>Scan</span> Produk<br />
                 Tanpa Barcode.
               </h1>
               <p className="hero-desc">
@@ -195,15 +187,15 @@ export default function Home() {
                 lebih cepat, jualan lebih mudah.
               </p>
               <div className="hero-cta">
-                <a href="#" className="btn-primary" style={{fontSize:'16px',padding:'16px 32px'}} id="hero-cta">
+                <a href="#harga" className="btn-primary" style={{ fontSize: '16px', padding: '16px 32px' }} id="hero-cta">
                   Mulai Sekarang
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </a>
-                <a href="#cara-kerja" className="btn-ghost" style={{fontSize:'16px',padding:'14px 28px'}}>Lihat Cara Kerjanya</a>
+                <a href="#cara-kerja" className="btn-ghost" style={{ fontSize: '16px', padding: '14px 28px' }}>Lihat Cara Kerjanya</a>
               </div>
-              <div className="hero-badges" style={{marginTop:'28px'}}>
+              <div className="hero-badges" style={{ marginTop: '28px' }}>
                 <div className="hero-badge">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
                   Login dengan Google
@@ -241,23 +233,23 @@ export default function Home() {
                         <div className="pcard-change">↑ +18% dari kemarin</div>
                       </div>
                       <div className="pcard-row">
-                        <div className="pcard-small" style={{background:'#fff8f0'}}>
+                        <div className="pcard-small" style={{ background: '#fff8f0' }}>
                           <div className="pcard-label">Produk</div>
-                          <div className="pcard-value" style={{color:'#ea580c',fontSize:'15px'}}>48</div>
+                          <div className="pcard-value" style={{ color: '#ea580c', fontSize: '15px' }}>48</div>
                         </div>
-                        <div className="pcard-small" style={{background:'#fff0f0'}}>
+                        <div className="pcard-small" style={{ background: '#fff0f0' }}>
                           <div className="pcard-label">Stok Habis</div>
-                          <div className="pcard-value" style={{color:'#dc2626',fontSize:'15px'}}>3</div>
+                          <div className="pcard-value" style={{ color: '#dc2626', fontSize: '15px' }}>3</div>
                         </div>
                       </div>
                       <div className="pchart">
-                        <div className="pchart-bar" style={{background:'#dcfce7',height:'30%'}}></div>
-                        <div className="pchart-bar" style={{background:'#dcfce7',height:'55%'}}></div>
-                        <div className="pchart-bar" style={{background:'#dcfce7',height:'40%'}}></div>
-                        <div className="pchart-bar" style={{background:'#dcfce7',height:'70%'}}></div>
-                        <div className="pchart-bar" style={{background:'#dcfce7',height:'45%'}}></div>
-                        <div className="pchart-bar" style={{background:'#0f7c44',height:'90%'}}></div>
-                        <div className="pchart-bar" style={{background:'#dcfce7',height:'60%'}}></div>
+                        <div className="pchart-bar" style={{ background: '#dcfce7', height: '30%' }}></div>
+                        <div className="pchart-bar" style={{ background: '#dcfce7', height: '55%' }}></div>
+                        <div className="pchart-bar" style={{ background: '#dcfce7', height: '40%' }}></div>
+                        <div className="pchart-bar" style={{ background: '#dcfce7', height: '70%' }}></div>
+                        <div className="pchart-bar" style={{ background: '#dcfce7', height: '45%' }}></div>
+                        <div className="pchart-bar" style={{ background: '#0f7c44', height: '90%' }}></div>
+                        <div className="pchart-bar" style={{ background: '#dcfce7', height: '60%' }}></div>
                       </div>
                     </div>
                     <div className="phone-nav-bar">
@@ -314,13 +306,13 @@ export default function Home() {
         <div className="container">
           <div className="section-head reveal">
             <div className="section-label">📈 Angka yang bicara</div>
-            <h2 className="section-title">Dipercaya pemilik toko<br/><span style={{color:'var(--green)'}}>di seluruh Indonesia</span></h2>
+            <h2 className="section-title">Dipercaya pemilik toko<br /><span style={{ color: 'var(--green)' }}>di seluruh Indonesia</span></h2>
           </div>
           <div className="stats-grid">
             <div className="stat-card reveal reveal-delay-1"><div className="stat-emoji">🏪</div><div className="stat-num">3.200+</div><div className="stat-label">Pemilik Toko Aktif</div></div>
             <div className="stat-card reveal reveal-delay-2"><div className="stat-emoji">💳</div><div className="stat-num">Rp 12M+</div><div className="stat-label">Total Transaksi Dicatat</div></div>
             <div className="stat-card reveal reveal-delay-3"><div className="stat-emoji">⭐</div><div className="stat-num">98%</div><div className="stat-label">Kepuasan Pengguna</div></div>
-            <div className="stat-card reveal" style={{transitionDelay:'0.4s'}}><div className="stat-emoji">⚡</div><div className="stat-num">Detik</div><div className="stat-label">Waktu Scan Produk</div></div>
+            <div className="stat-card reveal" style={{ transitionDelay: '0.4s' }}><div className="stat-emoji">⚡</div><div className="stat-num">Detik</div><div className="stat-label">Waktu Scan Produk</div></div>
           </div>
         </div>
       </section>
@@ -332,7 +324,7 @@ export default function Home() {
             <div className="reveal">
               <div className="problem-badge">😰 Masalah yang sangat familiar...</div>
               <h2 className="problem-title">
-                Capek nyatat manual<br/>dan gak tau stok<br/><em>masih berapa?</em>
+                Capek nyatat manual<br />dan gak tau stok<br /><em>masih berapa?</em>
               </h2>
               <div className="pain-list">
                 <div className="pain-item"><span className="pain-emoji">📓</span><p className="pain-text">Buku catatan hilang atau tulisan yang susah dibaca besok paginya</p></div>
@@ -343,7 +335,7 @@ export default function Home() {
             </div>
             <div className="reveal reveal-delay-2">
               <div className="solution-box">
-                <div style={{fontSize:'40px',marginBottom:'20px'}}>🤖</div>
+                <div style={{ fontSize: '40px', marginBottom: '20px' }}>🤖</div>
                 <h3>Saatnya punya Asisten yang kerja tanpa istirahat</h3>
                 <p>AsistenToko bukan sekadar aplikasi kasir biasa, ini asisten cerdas yang belajar dari pola tokomu dan selalu siap 24/7.</p>
                 <div className="solution-points">
@@ -362,7 +354,7 @@ export default function Home() {
         <div className="container">
           <div className="section-head reveal">
             <div className="section-label">✨ Fitur Lengkap</div>
-            <h2 className="section-title">Semua yang toko kamu<br/><span style={{color:'var(--green)'}}>butuhkan, ada di sini</span></h2>
+            <h2 className="section-title">Semua yang toko kamu<br /><span style={{ color: 'var(--green)' }}>butuhkan, ada di sini</span></h2>
             <p className="section-sub">Dirancang khusus untuk pemilik toko yang ingin bisnis lebih rapi tanpa perlu belajar software yang rumit.</p>
           </div>
           <div className="features-grid">
@@ -381,20 +373,20 @@ export default function Home() {
         <div className="container-sm">
           <div className="section-head reveal">
             <div className="section-label">🚀 Cara Kerja</div>
-            <h2 className="section-title">Langsung bisa pakai<br/><span style={{color:'var(--green)'}}>dalam 3 langkah</span></h2>
+            <h2 className="section-title">Langsung bisa pakai<br /><span style={{ color: 'var(--green)' }}>dalam 3 langkah</span></h2>
           </div>
           <div className="how-steps">
             <div className="how-step reveal">
               <div><div className="step-num-big">01</div><h3>Daftar dengan Google</h3><p>Tekan tombol "Masuk dengan Google", pilih akunmu, dan selesai. Tidak ada form panjang, tidak ada verifikasi email. Akun dan toko digitalmu langsung aktif.</p></div>
-              <div className="how-visual"><div className="how-icon-box" style={{background:'linear-gradient(135deg,#dcfce7,#bbf7d0)'}}>🔑</div></div>
+              <div className="how-visual"><div className="how-icon-box" style={{ background: 'linear-gradient(135deg,#dcfce7,#bbf7d0)' }}>🔑</div></div>
             </div>
             <div className="how-step reveal">
-              <div className="how-visual" style={{order:-1}}><div className="how-icon-box" style={{background:'linear-gradient(135deg,#d1fae5,#a7f3d0)'}}>📦</div></div>
+              <div className="how-visual" style={{ order: -1 }}><div className="how-icon-box" style={{ background: 'linear-gradient(135deg,#d1fae5,#a7f3d0)' }}>📦</div></div>
               <div><div className="step-num-big">02</div><h3>Input Produk via Scan</h3><p>Tambah produk yang kamu jual, bisa manual atau langsung scan kemasan. AI otomatis membaca nama produk dari foto dan mengisi form untukmu.</p></div>
             </div>
-            <div className="how-step reveal" style={{borderBottom:'none'}}>
+            <div className="how-step reveal" style={{ borderBottom: 'none' }}>
               <div><div className="step-num-big">03</div><h3>Scan &amp; Jalankan Toko</h3><p>Setiap ada transaksi, scan produk pakai kamera. Stok berkurang, laporan terupdate, semua berjalan otomatis. Kamu tinggal fokus ke pelanggan.</p></div>
-              <div className="how-visual"><div className="how-icon-box" style={{background:'linear-gradient(135deg,#bbf7d0,#86efac)'}}>💰</div></div>
+              <div className="how-visual"><div className="how-icon-box" style={{ background: 'linear-gradient(135deg,#bbf7d0,#86efac)' }}>💰</div></div>
             </div>
           </div>
         </div>
@@ -405,8 +397,8 @@ export default function Home() {
         <div className="container">
           <div className="section-head reveal">
             <div className="section-label">💬 Testimoni</div>
-            <h2 className="section-title">Mereka sudah merasakan<br/><span style={{color:'var(--green)', fontSize:'80px'}}>bedanya.</span></h2>
-            <p className="section-sub">Dari warung kelontong sampai minimarket <br/> semua bisa pakai AsistenToko.</p>
+            <h2 className="section-title">Mereka sudah merasakan<br /><span style={{ color: 'var(--green)', fontSize: '80px' }}>bedanya.</span></h2>
+            <p className="section-sub">Dari warung kelontong sampai minimarket <br /> semua bisa pakai AsistenToko.</p>
           </div>
           <div className="testimonials-grid">
             <div className="testi-card reveal">
@@ -447,8 +439,8 @@ export default function Home() {
       <section className="compare-section">
         <div className="container-sm">
           <div className="section-head reveal">
-            <div className="section-label" style={{background:'rgba(255,255,255,0.1)',color:'#86efac'}}>⚖️ Perbandingan</div>
-            <h2 className="section-title">AsistenToko vs <span style={{color:'#4b5563'}}>Cara Lama</span></h2>
+            <div className="section-label" style={{ background: 'rgba(255,255,255,0.1)', color: '#86efac' }}>⚖️ Perbandingan</div>
+            <h2 className="section-title">AsistenToko vs <span style={{ color: '#4b5563' }}>Cara Lama</span></h2>
           </div>
           <div className="compare-table reveal">
             <div className="compare-head">
@@ -470,15 +462,15 @@ export default function Home() {
         <div className="container-sm">
           <div className="section-head reveal">
             <div className="section-label">💰 Harga</div>
-            <h2 className="section-title">Investasi terkecil,<br/><span style={{color:'var(--green)'}}>keuntungan terbesar</span></h2>
+            <h2 className="section-title">Investasi terkecil,<br /><span style={{ color: 'var(--green)' }}>keuntungan terbesar</span></h2>
             <p className="section-sub">Lebih murah dari gaji kasir sehari. Akses langsung aktif setelah pembayaran.</p>
           </div>
           <div className="pricing-grid reveal">
             {/* Monthly */}
             <div className="pricingcard">
               <div className="plan-type">Bulanan</div>
-              <div className="price-new" style={{marginTop:'24px'}}><span className="price-num">99k</span><span className="price-per">/bulan</span></div>
-              <div className="plan-features" style={{marginTop:'32px'}}>
+              <div className="price-new" style={{ marginTop: '24px' }}><span className="price-num">99k</span><span className="price-per">/bulan</span></div>
+              <div className="plan-features" style={{ marginTop: '32px' }}>
                 <div className="plan-feature"><span className="check">✓</span> Semua fitur lengkap</div>
                 <div className="plan-feature"><span className="check">✓</span> Scan AI tanpa batas</div>
                 <div className="plan-feature"><span className="check">✓</span> Master produk unlimited</div>
@@ -486,7 +478,7 @@ export default function Home() {
                 <div className="plan-feature"><span className="check">✓</span> Notifikasi stok otomatis</div>
                 <div className="plan-feature"><span className="check">✓</span> Support via WhatsApp</div>
               </div>
-              <a href="#" className="btn-ghost" style={{display:'flex',justifyContent:'center'}} id="pricing-monthly">Mulai Sekarang</a>
+              <a href="http://lynk.id/usahatokosembako/z730eoo6eyqm/checkout" className="btn-ghost" style={{ display: 'flex', justifyContent: 'center' }} id="pricing-monthly">Mulai Sekarang</a>
             </div>
             {/* 3 Months */}
             <div className="pricingcard popular">
@@ -503,15 +495,15 @@ export default function Home() {
                 <div className="plan-feature"><span className="check">✓</span> Gratis konsultasi setup toko</div>
                 <div className="plan-feature"><span className="check">✓</span> Setara ~83k/bulan</div>
               </div>
-              <a href="#" className="btn-primary" style={{display:'flex',justifyContent:'center'}} id="pricing-quarterly">Mulai Sekarang →</a>
+              <a href="http://lynk.id/usahatokosembako/4oygzreoeee1/checkout" className="btn-primary" style={{ display: 'flex', justifyContent: 'center' }} id="pricing-quarterly">Akses Sekarang</a>
             </div>
             {/* Yearly */}
             <div className="pricingcard">
-              <div className="popular-badge" style={{background:'#ea580c'}}>🔥 Hemat Terbesar</div>
+              <div className="popular-badge" style={{ background: '#ea580c' }}>🔥 Hemat Terbesar</div>
               <div className="plan-type">Tahunan</div>
               <span className="price-old">Rp 1.188.000</span>
-              <div className="price-new"><span className="price-num green" style={{color:'#ea580c'}}>799k</span><span className="price-per">/tahun</span></div>
-              <div className="price-save bold" style={{background:'#ea580c'}}>Hemat Rp 389.000 🔥</div>
+              <div className="price-new"><span className="price-num green" style={{ color: '#ea580c' }}>799k</span><span className="price-per">/tahun</span></div>
+              <div className="price-save bold" style={{ background: '#ea580c' }}>Hemat Rp 389.000 🔥</div>
               <div className="plan-features">
                 <div className="plan-feature"><span className="check">✓</span> Semua fitur 3 bulanan</div>
                 <div className="plan-feature"><span className="check">✓</span> Akses penuh 12 bulan</div>
@@ -520,7 +512,7 @@ export default function Home() {
                 <div className="plan-feature"><span className="check">✓</span> Dedicated Account Manager</div>
                 <div className="plan-feature"><span className="check">✓</span> Setara ~66k/bulan</div>
               </div>
-              <a href="#" className="btn-ghost" style={{display:'flex',justifyContent:'center',color:'#ea580c',borderColor:'#ea580c'}} id="pricing-yearly">Mulai Sekarang</a>
+              <a href="http://lynk.id/usahatokosembako/5ryv6z3e204y/checkout" className="btn-ghost" style={{ display: 'flex', justifyContent: 'center', color: '#ea580c', borderColor: '#ea580c' }} id="pricing-yearly">Mau Hemat</a>
             </div>
           </div>
           <div className="pricing-note reveal">
@@ -534,7 +526,7 @@ export default function Home() {
         <div className="container-xs">
           <div className="section-head reveal">
             <div className="section-label">❓ FAQ</div>
-            <h2 className="section-title">Pertanyaan yang<br/><span style={{color:'var(--green)'}}>sering ditanya</span></h2>
+            <h2 className="section-title">Pertanyaan yang<br /><span style={{ color: 'var(--green)' }}>sering ditanya</span></h2>
           </div>
           <div className="faq-list reveal">
             <div className="faq-item"><button className="faq-btn"><span className="faq-q">Apakah perlu beli alat scan barcode khusus?</span><span className="faq-icon">+</span></button><div className="faq-body"><p className="faq-ans">Tidak sama sekali! AsistenToko menggunakan kamera HP yang sudah kamu miliki. AI kami mampu mengenali produk dari foto biasa, tanpa barcode sekalipun.</p></div></div>
@@ -551,15 +543,15 @@ export default function Home() {
       <section className="final-cta">
         <div className="final-cta-content">
           <span className="final-icon">🤖</span>
-          <h2>Tokomu terlalu berharga<br/>untuk dikelola manual.</h2>
+          <h2>Tokomu terlalu berharga<br />untuk dikelola manual.</h2>
           <p>Bergabunglah dengan 3.200+ pemilik toko yang sudah merasakan kemudahan punya asisten toko cerdas yang selalu siap bekerja.</p>
           <div>
-            <a href="#" className="btn-white" style={{fontSize:'17px',padding:'16px 36px'}} id="final-cta">
-              Mulai Sekarang dengan Google
+            <a href="#harga" className="btn-white" style={{ fontSize: '17px', padding: '16px 36px' }} id="final-cta">
+              Mulai Sekarang
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
             </a>
           </div>
-          <p className="final-sub" style={{paddingTop:'50px'}}>Login dengan Google · Akses langsung aktif · Garansi 7 hari</p>
+          <p className="final-sub" style={{ paddingTop: '50px' }}>Login dengan Google · Akses langsung aktif · Garansi 7 hari</p>
         </div>
       </section>
 
@@ -568,27 +560,32 @@ export default function Home() {
         <div className="container">
           <div className="footer-grid">
             <div>
-              <div className="footer-logo-row"><div className="footer-logo-icon">A</div><span className="footer-logo-text">AsistenToko</span></div>
+              <div className="footer-logo-row">
+                <img src="/logo-asistentoko.webp" alt="AsistenToko Logo" style={{ height: '38px' }} />
+                <span className="footer-logo-text">AsistenToko</span>
+              </div>
               <p className="footer-tagline">Asisten cerdas untuk pemilik toko yang ingin bisnis lebih mudah, rapi, dan menguntungkan.</p>
             </div>
-            <div>
-              <div className="footer-col-title">Produk</div>
-              <a href="#fitur" className="footer-link">Fitur</a>
-              <a href="#harga" className="footer-link">Harga</a>
-              <a href="#cara-kerja" className="footer-link">Cara Kerja</a>
-              <a href="#faq" className="footer-link">FAQ</a>
-            </div>
-            <div>
-              <div className="footer-col-title">Bantuan</div>
-              <a href="#" className="footer-link">WhatsApp Support</a>
-              <Link to="/privacy-policy" className="footer-link">Privacy Policy</Link>
-              <Link to="/terms-of-service" className="footer-link">Terms of Service</Link>
+            <div className="footer-links-wrapper">
+              <div>
+                <div className="footer-col-title">Produk</div>
+                <a href="#fitur" className="footer-link">Fitur</a>
+                <a href="#harga" className="footer-link">Harga</a>
+                <a href="#cara-kerja" className="footer-link">Cara Kerja</a>
+                <a href="#faq" className="footer-link">FAQ</a>
+              </div>
+              <div>
+                <div className="footer-col-title">Bantuan</div>
+                <a href="#" className="footer-link">WhatsApp Support</a>
+                <Link to="/privacy-policy" className="footer-link">Privacy Policy</Link>
+                <Link to="/terms-of-service" className="footer-link">Terms of Service</Link>
+              </div>
             </div>
           </div>
           <hr className="footer-divider" />
           <div className="footer-bottom">
-            <span>© 2025 AsistenToko. Hak cipta dilindungi undang-undang.</span>
-            <span>Dibuat dengan ❤️ untuk pemilik toko Indonesia</span>
+            <span>© {new Date().getFullYear()} AsistenToko. Hak cipta dilindungi.</span>
+            <span>Dibuat dengan ❤️ untuk pemilik toko Indonesia.</span>
           </div>
         </div>
       </footer>

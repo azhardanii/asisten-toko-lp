@@ -160,6 +160,7 @@ export default function Home() {
             <a href="#harga" className="nav-link">Harga</a>
           </div>
           <div className="nav-actions">
+            <a href="http://lynk.id/usahatokosembako/g7zr8vnlrv6e/checkout" className="nav-signin" style={{ color: 'var(--green)' }}>Coba Gratis</a>
             <a href={APP_URL} className="nav-signin" id="nav-signin">Masuk</a>
             <a href="#harga" className="btn-primary" style={{ padding: '10px 22px', fontSize: '14px' }} id="nav-cta">Mulai Sekarang →</a>
           </div>
@@ -193,7 +194,7 @@ export default function Home() {
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </a>
-                <a href="#cara-kerja" className="btn-ghost" style={{ fontSize: '16px', padding: '14px 28px' }}>Lihat Cara Kerjanya</a>
+                <a href="http://lynk.id/usahatokosembako/g7zr8vnlrv6e/checkout" className="btn-ghost" style={{ fontSize: '16px', padding: '14px 28px' }}>Coba Gratis 1 Hari</a>
               </div>
               <div className="hero-badges" style={{ marginTop: '28px' }}>
                 <div className="hero-badge">
@@ -462,8 +463,8 @@ export default function Home() {
         <div className="container-sm">
           <div className="section-head reveal">
             <div className="section-label">💰 Harga</div>
-            <h2 className="section-title">Investasi terkecil,<br /><span style={{ color: 'var(--green)' }}>keuntungan terbesar</span></h2>
-            <p className="section-sub">Lebih murah dari gaji kasir sehari. Akses langsung aktif setelah pembayaran.</p>
+            <h2 className="section-title">Investasi terkecil,<br /><span style={{ color: 'var(--green)' }}>Keuntungan terbesar</span></h2>
+            <p className="section-sub">Lebih murah dari gaji kasir.<br />Akses langsung aktif setelah pembayaran.</p>
           </div>
           <div className="pricing-grid reveal">
             {/* Monthly */}

@@ -495,7 +495,6 @@ export default function Home() {
                 <div className="plan-feature"><span className="check">✓</span> Akses penuh 3 bulan</div>
                 <div className="plan-feature"><span className="check">✓</span> Prioritas support &amp; update</div>
                 <div className="plan-feature"><span className="check">✓</span> Backup data otomatis</div>
-                <div className="plan-feature"><span className="check">✓</span> Gratis konsultasi setup toko</div>
                 <div className="plan-feature"><span className="check">✓</span> Setara ~83k/bulan</div>
               </div>
               <a href="http://lynk.id/usahatokosembako/4oygzreoeee1/checkout" className="btn-primary" style={{ display: 'flex', justifyContent: 'center' }} id="pricing-quarterly">Akses Sekarang</a>
@@ -579,6 +578,7 @@ export default function Home() {
               </div>
               <div>
                 <div className="footer-col-title">Bantuan</div>
+                <Link to="/program-afiliasi" className="footer-link">Program Afiliasi</Link>
                 <a href="#" className="footer-link">WhatsApp Support</a>
                 <Link to="/privacy-policy" className="footer-link">Privacy Policy</Link>
                 <Link to="/terms-of-service" className="footer-link">Terms of Service</Link>

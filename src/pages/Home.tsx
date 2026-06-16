@@ -470,8 +470,10 @@ export default function Home() {
             {/* Monthly */}
             <div className="pricingcard">
               <div className="plan-type">Bulanan</div>
-              <div className="price-new" style={{ marginTop: '24px' }}><span className="price-num">99k</span><span className="price-per">/bulan</span></div>
-              <div className="plan-features" style={{ marginTop: '32px' }}>
+              <span className="price-old">Rp 149.000</span>
+              <div className="price-new"><span className="price-num">99k</span><span className="price-per">/bulan</span></div>
+              <div className="price-save bold">Hemat Rp 50.000 🎉</div>
+              <div className="plan-features">
                 <div className="plan-feature"><span className="check">✓</span> Semua fitur lengkap</div>
                 <div className="plan-feature"><span className="check">✓</span> Scan AI tanpa batas</div>
                 <div className="plan-feature"><span className="check">✓</span> Master produk unlimited</div>
@@ -485,9 +487,9 @@ export default function Home() {
             <div className="pricingcard popular">
               <div className="popular-badge">⭐ Paling Populer</div>
               <div className="plan-type">3 Bulan</div>
-              <span className="price-old">Rp 297.000</span>
+              <span className="price-old">Rp 599.000</span>
               <div className="price-new"><span className="price-num green">249k</span><span className="price-per">/3 bulan</span></div>
-              <div className="price-save bold">Hemat Rp 48.000 🎉</div>
+              <div className="price-save bold">Hemat Rp 350.000 🎉</div>
               <div className="plan-features">
                 <div className="plan-feature"><span className="check">✓</span> Semua fitur bulanan</div>
                 <div className="plan-feature"><span className="check">✓</span> Akses penuh 3 bulan</div>
@@ -502,9 +504,9 @@ export default function Home() {
             <div className="pricingcard">
               <div className="popular-badge" style={{ background: '#ea580c' }}>🔥 Hemat Terbesar</div>
               <div className="plan-type">Tahunan</div>
-              <span className="price-old">Rp 1.188.000</span>
+              <span className="price-old">Rp 2.199.000</span>
               <div className="price-new"><span className="price-num green" style={{ color: '#ea580c' }}>799k</span><span className="price-per">/tahun</span></div>
-              <div className="price-save bold" style={{ background: '#ea580c' }}>Hemat Rp 389.000 🔥</div>
+              <div className="price-save bold" style={{ background: '#ea580c' }}>Hemat Rp 1.400.000 🔥</div>
               <div className="plan-features">
                 <div className="plan-feature"><span className="check">✓</span> Semua fitur 3 bulanan</div>
                 <div className="plan-feature"><span className="check">✓</span> Akses penuh 12 bulan</div>

@@ -161,8 +161,7 @@ export default function Home() {
           </div>
           <div className="nav-actions">
             <a href="http://lynk.id/usahatokosembako/g7zr8vnlrv6e/checkout" className="nav-signin" style={{ color: 'var(--green)' }}>Coba Gratis</a>
-            <a href={APP_URL} className="nav-signin" id="nav-signin">Masuk</a>
-            <a href="#harga" className="btn-primary" style={{ padding: '10px 22px', fontSize: '14px' }} id="nav-cta">Mulai Sekarang →</a>
+            <a href={APP_URL} className="btn-primary" style={{ padding: '10px 22px', fontSize: '14px' }} id="nav-signin">Masuk</a>
           </div>
         </div>
       </nav>
@@ -471,8 +470,8 @@ export default function Home() {
             <div className="pricingcard">
               <div className="plan-type">Bulanan</div>
               <span className="price-old">Rp 149.000</span>
-              <div className="price-new"><span className="price-num">99k</span><span className="price-per">/bulan</span></div>
-              <div className="price-save bold">Hemat Rp 50.000 🎉</div>
+              <div className="price-new"><span className="price-num">79k</span><span className="price-per">/bulan</span></div>
+              <div className="price-save bold">Hemat Rp 70.000 💡</div>
               <div className="plan-features">
                 <div className="plan-feature"><span className="check">✓</span> Semua fitur lengkap</div>
                 <div className="plan-feature"><span className="check">✓</span> Scan AI tanpa batas</div>
@@ -488,33 +487,33 @@ export default function Home() {
               <div className="popular-badge">⭐ Paling Populer</div>
               <div className="plan-type">3 Bulan</div>
               <span className="price-old">Rp 599.000</span>
-              <div className="price-new"><span className="price-num green">249k</span><span className="price-per">/3 bulan</span></div>
-              <div className="price-save bold">Hemat Rp 350.000 🎉</div>
+              <div className="price-new"><span className="price-num green">219k</span><span className="price-per">/3 bulan</span></div>
+              <div className="price-save bold">Hemat Rp 380.000 ✨</div>
               <div className="plan-features">
                 <div className="plan-feature"><span className="check">✓</span> Semua fitur bulanan</div>
                 <div className="plan-feature"><span className="check">✓</span> Akses penuh 3 bulan</div>
                 <div className="plan-feature"><span className="check">✓</span> Prioritas support &amp; update</div>
                 <div className="plan-feature"><span className="check">✓</span> Backup data otomatis</div>
-                <div className="plan-feature"><span className="check">✓</span> Setara ~83k/bulan</div>
+                <div className="plan-feature"><span className="check">✓</span> Setara ~73k/bulan</div>
               </div>
               <a href="http://lynk.id/usahatokosembako/4oygzreoeee1/checkout" className="btn-primary" style={{ display: 'flex', justifyContent: 'center' }} id="pricing-quarterly">Akses Sekarang</a>
             </div>
             {/* Yearly */}
             <div className="pricingcard">
-              <div className="popular-badge" style={{ background: '#ea580c' }}>🔥 Hemat Terbesar</div>
+              <div className="popular-badge" style={{ background: 'linear-gradient(135deg, #18181b 0%, #000000 100%)', color: '#fbbf24', border: '1px solid rgba(251, 191, 36, 0.4)' }}>👑 VIP Eksklusif</div>
               <div className="plan-type">Tahunan</div>
               <span className="price-old">Rp 2.199.000</span>
-              <div className="price-new"><span className="price-num green" style={{ color: '#ea580c' }}>799k</span><span className="price-per">/tahun</span></div>
-              <div className="price-save bold" style={{ background: '#ea580c' }}>Hemat Rp 1.400.000 🔥</div>
+              <div className="price-new"><span className="price-num green" style={{ color: '#111827' }}>699k</span><span className="price-per">/tahun</span></div>
+              <div className="price-save bold" style={{ background: 'linear-gradient(135deg, #18181b 0%, #000000 100%)', color: '#fbbf24', border: '1px solid rgba(251, 191, 36, 0.2)' }}>Hemat Rp 1.500.000 🚀</div>
               <div className="plan-features">
                 <div className="plan-feature"><span className="check">✓</span> Semua fitur 3 bulanan</div>
                 <div className="plan-feature"><span className="check">✓</span> Akses penuh 12 bulan</div>
                 <div className="plan-feature"><span className="check">✓</span> Prioritas support utama</div>
                 <div className="plan-feature"><span className="check">✓</span> Backup data harian otomatis</div>
                 <div className="plan-feature"><span className="check">✓</span> Dedicated Account Manager</div>
-                <div className="plan-feature"><span className="check">✓</span> Setara ~66k/bulan</div>
+                <div className="plan-feature"><span className="check">✓</span> Setara ~58k/bulan</div>
               </div>
-              <a href="http://lynk.id/usahatokosembako/5ryv6z3e204y/checkout" className="btn-ghost" style={{ display: 'flex', justifyContent: 'center', color: '#ea580c', borderColor: '#ea580c' }} id="pricing-yearly">Mau Hemat</a>
+              <a href="http://lynk.id/usahatokosembako/5ryv6z3e204y/checkout" style={{ display: 'flex', justifyContent: 'center', background: 'linear-gradient(135deg, #18181b 0%, #000000 100%)', color: '#fbbf24', padding: '12px', borderRadius: '8px', fontWeight: 'bold', textDecoration: 'none', border: '1px solid #fbbf24', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }} id="pricing-yearly">Mau Hemat 🔥</a>
             </div>
           </div>
           <div className="pricing-note reveal">

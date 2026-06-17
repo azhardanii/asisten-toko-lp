@@ -67,7 +67,7 @@ export default function TermsOfService() {
       <footer className="footer">
         <div className="container">
           <div className="footer-bottom" style={{ borderTop: 'none', paddingTop: 0 }}>
-            <span>© {new Date().getFullYear()} AsistenToko. Hak cipta dilindungi undang-undang.</span>
+            <span>© {new Date().getFullYear()} AsistenToko. <br className="mobile-break" />Hak cipta dilindungi undang-undang.</span>
             <span>Dibuat dengan ❤️ untuk pemilik toko Indonesia</span>
           </div>
         </div>

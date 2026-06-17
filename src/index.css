@@ -57,6 +57,16 @@
     }
 
     /* ===== UTILITIES ===== */
+    .mobile-break {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-break {
+        display: block;
+      }
+    }
+
     .container {
       max-width: 1200px;
       margin: 0 auto;

@@ -586,7 +586,7 @@ export default function Home() {
           </div>
           <hr className="footer-divider" />
           <div className="footer-bottom">
-            <span>© {new Date().getFullYear()} AsistenToko. Hak cipta dilindungi.</span>
+            <span>© {new Date().getFullYear()} AsistenToko. <br className="mobile-break" />Hak cipta dilindungi.</span>
             <span>Dibuat dengan ❤️ untuk pemilik toko Indonesia.</span>
           </div>
         </div>

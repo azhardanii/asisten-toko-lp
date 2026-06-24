@@ -179,7 +179,7 @@ export default function Home() {
               </div>
               <h1 className="hero-title">
                 Pencatatan Instan,<br />
-                Cukup <span className="highlight" style={{ lineHeight: '100px' }}>Scan</span> Produk<br />
+                Cukup <span className="highlight">Scan</span> Produk<br />
                 Tanpa Barcode.
               </h1>
               <p className="hero-desc">
@@ -198,15 +198,42 @@ export default function Home() {
               <div className="hero-badges" style={{ marginTop: '28px' }}>
                 <div className="hero-badge">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
-                  Login dengan Google
+                  Login Google
                 </div>
                 <div className="hero-badge">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
-                  Langsung aktif
+                  Langsung Aktif
                 </div>
                 <div className="hero-badge">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
-                  Tanpa install aplikasi
+                  Data Aman
+                </div>
+              </div>
+
+              {/* Visual Flow Alur Penggunaan */}
+              <div className="hero-flow-graphic">
+                <div className="hfg-image-container">
+                  <img src="/alur-penggunaan.png" alt="Ilustrasi AsistenToko" className="hfg-image" />
+                </div>
+                <div className="hfg-steps-container">
+                  <div className="hfg-step">
+                    <div className="hfg-icon-box" style={{ background: 'linear-gradient(135deg, #dcfce7, #bbf7d0)' }}>🔑</div>
+                    <span className="hfg-text">1. Dapatkan<br />Akses</span>
+                  </div>
+                  <div className="hfg-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                  </div>
+                  <div className="hfg-step">
+                    <div className="hfg-icon-box" style={{ background: 'linear-gradient(135deg, #d1fae5, #a7f3d0)' }}>📦</div>
+                    <span className="hfg-text">2. Masukkan<br />Produk</span>
+                  </div>
+                  <div className="hfg-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                  </div>
+                  <div className="hfg-step">
+                    <div className="hfg-icon-box" style={{ background: 'linear-gradient(135deg, #bbf7d0, #86efac)' }}>📸</div>
+                    <span className="hfg-text">3. Scan<br />Transaksi</span>
+                  </div>
                 </div>
               </div>
             </div>

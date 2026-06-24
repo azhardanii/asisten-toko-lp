@@ -218,21 +218,21 @@ export default function Home() {
                 <div className="hfg-steps-container">
                   <div className="hfg-step">
                     <div className="hfg-icon-box" style={{ background: 'linear-gradient(135deg, #dcfce7, #bbf7d0)' }}>🔑</div>
-                    <span className="hfg-text">1. Dapatkan<br />Akses</span>
+                    <span className="hfg-text">1. Dapatkan <br />Akses</span>
                   </div>
                   <div className="hfg-arrow">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                   </div>
                   <div className="hfg-step">
                     <div className="hfg-icon-box" style={{ background: 'linear-gradient(135deg, #d1fae5, #a7f3d0)' }}>📦</div>
-                    <span className="hfg-text">2. Masukkan<br />Produk</span>
+                    <span className="hfg-text">2. Masukkan <br />Produk</span>
                   </div>
                   <div className="hfg-arrow">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                   </div>
                   <div className="hfg-step">
                     <div className="hfg-icon-box" style={{ background: 'linear-gradient(135deg, #bbf7d0, #86efac)' }}>📸</div>
-                    <span className="hfg-text">3. Scan<br />Transaksi</span>
+                    <span className="hfg-text">3. Scan <br />Transaksi</span>
                   </div>
                 </div>
               </div>

@@ -406,14 +406,19 @@ export default function Home() {
           </div>
           <div className="video-container reveal" style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.1)', aspectRatio: '9/16', background: '#000', cursor: 'pointer', maxWidth: '360px', margin: '0 auto' }} onClick={() => setIsVideoPlaying(true)}>
             {!isVideoPlaying ? (
-              <>
-                <img src="/tutor_thumbnail.png" alt="Thumbnail Tutorial AsistenToko" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '80px', height: '80px', background: 'var(--green)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 8px 24px rgba(22, 163, 74, 0.4)' }}>
-                  <svg width="36" height="36" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 5v14l11-7z" />
+              <div style={{ width: '100%', height: '100%', position: 'relative' }} className="thumbnail-wrapper">
+                <img src="/tutor_thumbnail.webp" alt="Thumbnail Tutorial AsistenToko" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                {/* Overlay Hitam Transparan agar kontras */}
+                <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(0,0,0,0.5)' }}></div>
+                {/* Tombol Play */}
+                <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '84px', height: '84px', background: 'var(--green)', borderRadius: '50%', border: '4px solid white', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 40px rgba(22, 163, 74, 0.9), 0 8px 32px rgba(0, 0, 0, 0.5)', transition: 'transform 0.2s ease-in-out' }} 
+                  onMouseEnter={(e) => e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1.1)'} 
+                  onMouseLeave={(e) => e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1)'}>
+                  <svg width="60" height="60" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '8px' }}>
+                    <path d="M7 6v12l11-6z" />
                   </svg>
                 </div>
-              </>
+              </div>
             ) : (
               <video src="/tutor_asistentoko.mp4" controls autoPlay style={{ width: '100%', height: '100%', objectFit: 'contain', outline: 'none' }}></video>
             )}

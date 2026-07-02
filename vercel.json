@@ -1,11 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/apk-download",
-      "destination": "https://github.com/azhardanii/asisten-toko/releases/download/latest/AsistenToko.apk",
-      "permanent": false
-    }
-  ],
   "rewrites": [
     {
       "source": "/(.*)",

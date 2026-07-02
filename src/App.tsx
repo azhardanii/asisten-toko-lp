@@ -16,7 +16,7 @@ function ApkRedirect() {
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', fontFamily: 'sans-serif', padding: '20px', textAlign: 'center' }}>
-      <p>Mengarahkan ke file APK... Jika tidak dialihkan otomatis, <a href="https://github.com/azhardanii/asisten-toko/releases/download/latest/AsistenToko.apk" style={{color: '#16A34A', fontWeight: 'bold'}}>klik di sini</a>.</p>
+      <p>Mengunduh file APK...<br /><br />Jika tidak terunduh otomatis, <a href="https://github.com/azhardanii/asisten-toko/releases/download/latest/AsistenToko.apk" style={{ color: '#16A34A', fontWeight: 'bold' }}>klik di sini</a>.</p>
     </div>
   );
 }
@@ -33,7 +33,7 @@ export default function App() {
         <Route path="/terms-of-service" element={<TermsOfService />} />
         {/* Fallback route if vercel.json is bypassed */}
         <Route path="/apk-download" element={<ApkRedirect />} />
-        
+
         {/* Catch-all fallback */}
         <Route path="*" element={<Home />} />
       </Routes>

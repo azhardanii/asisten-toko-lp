@@ -211,6 +211,24 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* Mobile Download Block (Visible only on mobile, placed below badges) */}
+              <div className="mobile-download-block" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', background: 'linear-gradient(145deg, rgba(22, 163, 74, 0.08), rgba(22, 163, 74, 0.02))', padding: '16px 20px', borderRadius: '16px', border: '1px solid rgba(22, 163, 74, 0.15)', width: '100%', margin: '24px 0 0 0', zIndex: 10 }}>
+                <a href="https://asistentoko.com/apk-download" className="btn-primary" style={{ padding: '14px 24px', fontSize: '15px', width: '100%', display: 'flex', justifyContent: 'center', boxShadow: '0 8px 24px rgba(22,163,74,0.25)' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '8px'}}>
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  Download App (Android)
+                </a>
+                <div style={{ fontSize: '12.5px', color: '#4B5563', lineHeight: 1.5, marginTop: '12px' }}>
+                  <span style={{ color: '#047857', fontWeight: 700 }}>✅ Tersedia untuk Android</span><br/>
+                  <span style={{ opacity: 0.85 }}>Versi iOS/iPhone masih dalam tahap pengembangan.</span>
+                </div>
+              </div>
+
+
+
               {/* Visual Flow Alur Penggunaan */}
               <div className="hero-flow-graphic">
                 <div className="hfg-image-container">
@@ -238,8 +256,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="hero-visual">
-              <div className="phone-float">
+            <div className="hero-visual" style={{ flexDirection: 'column', alignItems: 'center', gap: '48px', paddingTop: '12px' }}>
+              <div style={{ position: 'relative' }}>
+                <div className="phone-float">
                 <div className="phone-shell">
                   <div className="phone-screen">
                     <div className="phone-notch">
@@ -297,6 +316,22 @@ export default function Home() {
               <div className="chip chip-stok">
                 <div className="chip-label">⚠️ Perlu restock</div>
                 <div className="chip-val orange">3 produk</div>
+              </div>
+              </div>
+              
+              <div className="desktop-download-block" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', background: 'linear-gradient(145deg, rgba(22, 163, 74, 0.08), rgba(22, 163, 74, 0.02))', padding: '16px 20px', borderRadius: '16px', border: '1px solid rgba(22, 163, 74, 0.15)', maxWidth: '320px', width: '100%', margin: '0 auto', zIndex: 10 }}>
+                <a href="https://asistentoko.com/apk-download" className="btn-primary" style={{ padding: '14px 24px', fontSize: '15px', width: '100%', display: 'flex', justifyContent: 'center', boxShadow: '0 8px 24px rgba(22,163,74,0.25)' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '8px'}}>
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  Download App (Android)
+                </a>
+                <div style={{ fontSize: '12.5px', color: '#4B5563', lineHeight: 1.5, marginTop: '12px' }}>
+                  <span style={{ color: '#047857', fontWeight: 700 }}>✅ Tersedia untuk Android</span><br/>
+                  <span style={{ opacity: 0.85 }}>Versi iOS/iPhone masih dalam tahap pengembangan.</span>
+                </div>
               </div>
             </div>
           </div>

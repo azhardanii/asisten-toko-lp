@@ -6,6 +6,16 @@ import AffiliateGuide from './pages/AffiliateGuide';
 import AffiliateRedirect from './pages/AffiliateRedirect';
 import ScrollToTop from './components/ScrollToTop';
 
+function ApkRedirect() {
+  // Client-side fallback redirect
+  window.location.replace("https://github.com/azhardanii/asisten-toko/releases/download/latest/AsistenToko.apk");
+  return (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', fontFamily: 'sans-serif', padding: '20px', textAlign: 'center' }}>
+      <p>Mengarahkan ke file APK... Jika tidak dialihkan otomatis, <a href="https://github.com/azhardanii/asisten-toko/releases/download/latest/AsistenToko.apk" style={{color: '#16A34A', fontWeight: 'bold'}}>klik di sini</a>.</p>
+    </div>
+  );
+}
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -16,6 +26,11 @@ export default function App() {
         <Route path="/affiliate" element={<AffiliateRedirect />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
+        {/* Fallback route if vercel.json is bypassed */}
+        <Route path="/apk-download" element={<ApkRedirect />} />
+        
+        {/* Catch-all fallback */}
+        <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );

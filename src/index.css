@@ -1870,6 +1870,25 @@
     }
 
     @media (max-width: 768px) {
+      .download-wrapper {
+        justify-content: center !important;
+        text-align: center !important;
+      }
+    }
+
+    .mobile-download-block {
+      display: none !important;
+    }
+    @media (max-width: 1024px) {
+      .desktop-download-block {
+        display: none !important;
+      }
+      .mobile-download-block {
+        display: flex !important;
+      }
+    }
+
+    @media (max-width: 768px) {
 
       .container,
       .container-sm,
@@ -1935,7 +1954,8 @@
         flex-shrink: 0;
       }
 
-      .hero-visual {
+      .hero-visual .phone-float,
+      .hero-visual .chip {
         display: none;
       }
 

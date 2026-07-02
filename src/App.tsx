@@ -16,7 +16,7 @@ function ApkRedirect() {
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', fontFamily: 'sans-serif', padding: '20px', textAlign: 'center' }}>
-      <p>Mengunduh file APK...<br /><br />Jika tidak terunduh otomatis, <a href="https://github.com/azhardanii/asisten-toko/releases/download/latest/AsistenToko.apk" style={{ color: '#16A34A', fontWeight: 'bold' }}>klik di sini</a>.</p>
+      <p>Mengunduh file APK...<br /><br />Jika unduhan tidak dimulai secara otomatis, <a href="https://github.com/azhardanii/asisten-toko/releases/download/latest/AsistenToko.apk" style={{ color: '#16A34A', fontWeight: 'bold' }}>klik di sini</a>.</p>
     </div>
   );
 }

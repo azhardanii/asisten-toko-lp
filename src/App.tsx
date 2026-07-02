@@ -6,9 +6,14 @@ import AffiliateGuide from './pages/AffiliateGuide';
 import AffiliateRedirect from './pages/AffiliateRedirect';
 import ScrollToTop from './components/ScrollToTop';
 
+import { useEffect } from 'react';
+
 function ApkRedirect() {
-  // Client-side fallback redirect
-  window.location.replace("https://github.com/azhardanii/asisten-toko/releases/download/latest/AsistenToko.apk");
+  useEffect(() => {
+    // Redirect to the actual APK file
+    window.location.href = "https://github.com/azhardanii/asisten-toko/releases/download/latest/AsistenToko.apk";
+  }, []);
+
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', fontFamily: 'sans-serif', padding: '20px', textAlign: 'center' }}>
       <p>Mengarahkan ke file APK... Jika tidak dialihkan otomatis, <a href="https://github.com/azhardanii/asisten-toko/releases/download/latest/AsistenToko.apk" style={{color: '#16A34A', fontWeight: 'bold'}}>klik di sini</a>.</p>

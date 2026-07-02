@@ -213,7 +213,7 @@ export default function Home() {
 
               {/* Mobile Download Block (Visible only on mobile, placed below badges) */}
               <div className="mobile-download-block" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', background: 'linear-gradient(145deg, rgba(22, 163, 74, 0.08), rgba(22, 163, 74, 0.02))', padding: '16px 20px', borderRadius: '16px', border: '1px solid rgba(22, 163, 74, 0.15)', width: '100%', margin: '24px 0 0 0', zIndex: 10 }}>
-                <a href="https://github.com/azhardanii/asisten-toko/releases/download/latest/AsistenToko.apk" className="btn-primary" style={{ padding: '14px 24px', fontSize: '15px', width: '100%', display: 'flex', justifyContent: 'center', boxShadow: '0 8px 24px rgba(22,163,74,0.25)' }}>
+                <a href="/AsistenToko.apk" download="AsistenToko.apk" className="btn-primary" style={{ padding: '14px 24px', fontSize: '15px', width: '100%', display: 'flex', justifyContent: 'center', boxShadow: '0 8px 24px rgba(22,163,74,0.25)' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '8px'}}>
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                     <polyline points="7 10 12 15 17 10"></polyline>
@@ -320,7 +320,7 @@ export default function Home() {
               </div>
               
               <div className="desktop-download-block" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', background: 'linear-gradient(145deg, rgba(22, 163, 74, 0.08), rgba(22, 163, 74, 0.02))', padding: '16px 20px', borderRadius: '16px', border: '1px solid rgba(22, 163, 74, 0.15)', maxWidth: '320px', width: '100%', margin: '0 auto', zIndex: 10 }}>
-                <a href="https://github.com/azhardanii/asisten-toko/releases/download/latest/AsistenToko.apk" className="btn-primary" style={{ padding: '14px 24px', fontSize: '15px', width: '100%', display: 'flex', justifyContent: 'center', boxShadow: '0 8px 24px rgba(22,163,74,0.25)' }}>
+                <a href="/AsistenToko.apk" download="AsistenToko.apk" className="btn-primary" style={{ padding: '14px 24px', fontSize: '15px', width: '100%', display: 'flex', justifyContent: 'center', boxShadow: '0 8px 24px rgba(22,163,74,0.25)' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '8px'}}>
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                     <polyline points="7 10 12 15 17 10"></polyline>

@@ -610,9 +610,6 @@ export default function Home() {
               <a href="http://lynk.id/usahatokosembako/5ryv6z3e204y/checkout" style={{ display: 'flex', justifyContent: 'center', background: 'linear-gradient(135deg, #18181b 0%, #000000 100%)', color: '#fbbf24', padding: '12px', borderRadius: '8px', fontWeight: 'bold', textDecoration: 'none', border: '1px solid #fbbf24', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }} id="pricing-yearly">Mau Hemat 🔥</a>
             </div>
           </div>
-          <div className="pricing-note reveal">
-            <p>🔒 Tidak puas setelah coba? <strong>Garansi 7 hari uang kembali.</strong></p>
-          </div>
         </div>
       </section>
 
@@ -628,7 +625,6 @@ export default function Home() {
             <div className="faq-item"><button className="faq-btn"><span className="faq-q">Berapa produk yang bisa saya masukkan?</span><span className="faq-icon">+</span></button><div className="faq-body"><p className="faq-ans">Tidak ada batasan! Kamu bisa mengelola ratusan bahkan ribuan produk tanpa biaya tambahan. Semua sudah termasuk dalam harga berlangganan.</p></div></div>
             <div className="faq-item"><button className="faq-btn"><span className="faq-q">Bagaimana cara daftar? Apakah perlu isi form panjang?</span><span className="faq-icon">+</span></button><div className="faq-body"><p className="faq-ans">Sangat mudah! Cukup klik tombol "Masuk dengan Google", pilih akun Gmail kamu, dan selesai. Akses langsung aktif, tidak perlu verifikasi email atau isi formulir.</p></div></div>
             <div className="faq-item"><button className="faq-btn"><span className="faq-q">Apakah data saya aman?</span><span className="faq-icon">+</span></button><div className="faq-body"><p className="faq-ans">Sangat aman. Data tersimpan di server terenkripsi dan dicadangkan otomatis setiap hari. Kami tidak pernah membagikan data ke pihak manapun.</p></div></div>
-            <div className="faq-item"><button className="faq-btn"><span className="faq-q">Bagaimana jika saya tidak puas?</span><span className="faq-icon">+</span></button><div className="faq-body"><p className="faq-ans">Kami memberikan garansi 7 hari uang kembali. Jika kamu merasa AsistenToko tidak memberikan manfaat yang kamu harapkan, hubungi kami dan kami kembalikan pembayaranmu penuh.</p></div></div>
             <div className="faq-item"><button className="faq-btn"><span className="faq-q">Apakah bisa dipakai di HP Android dan iPhone?</span><span className="faq-icon">+</span></button><div className="faq-body"><p className="faq-ans">Ya! AsistenToko berbasis web yang dioptimalkan untuk mobile, sehingga bisa dipakai di semua HP, Android maupun iPhone, cukup buka browser, tidak perlu install aplikasi.</p></div></div>
           </div>
         </div>
@@ -650,7 +646,7 @@ export default function Home() {
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ marginLeft: '8px' }}><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>
             </a>
           </div>
-          <p className="final-sub" style={{ paddingTop: '50px' }}>Login dengan Google · Akses langsung aktif · Garansi 7 hari</p>
+          <p className="final-sub" style={{ paddingTop: '50px' }}>Login dengan Google · Akses langsung aktif</p>
         </div>
       </section>
 

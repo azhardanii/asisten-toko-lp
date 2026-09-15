@@ -50,7 +50,7 @@ export default function TermsOfService() {
           <p>AsistenToko menggunakan sistem *Software-as-a-Service* (SaaS) berbayar untuk menjaga kualitas server AI kami.</p>
           <ul style={{ paddingLeft: '20px' }}>
             <li><strong>Opsi Paket:</strong> Layanan dikenakan biaya sesuai paket berlangganan yang Anda pilih (Bulanan, 3 Bulan, atau Tahunan). Akses premium langsung aktif setelah sistem mengonfirmasi pembayaran Anda.</li>
-            <li><strong>Kebijakan Pengembalian Dana (Refund):</strong> Kami memberikan <strong>Garansi 7 Hari Uang Kembali</strong> sejak tanggal pembayaran awal. Jika Anda merasa fitur AI kasir dan pencatatan stok kami tidak sesuai dengan kebutuhan toko Anda, silakan hubungi Customer Support kami dalam rentang 7 hari tersebut untuk meminta klaim pengembalian dana 100%. Setelah melewati 7 hari, seluruh transaksi bersifat mutlak (Non-Refundable).</li>
+            <li><strong>Kebijakan Pengembalian Dana (Refund):</strong> Seluruh transaksi pembayaran paket bersifat mutlak (Non-Refundable). Silakan hubungi Customer Support kami jika Anda memerlukan bantuan terkait akun atau layanan Anda.</li>
           </ul>
 
           <h2 style={{ fontSize: '24px', fontWeight: 800, color: 'var(--bg-dark)', marginTop: '20px', marginBottom: '-10px' }}>5. Penyalahgunaan Platform</h2>

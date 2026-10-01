@@ -563,8 +563,8 @@ export default function Home() {
             <div className="pricingcard">
               <div className="plan-type">Bulanan</div>
               <span className="price-old">Rp 149.000</span>
-              <div className="price-new"><span className="price-num">79k</span><span className="price-per">/bulan</span></div>
-              <div className="price-save bold">Hemat Rp 70.000 💡</div>
+              <div className="price-new"><span className="price-num">99k</span><span className="price-per">/bulan</span></div>
+              <div className="price-save bold">Hemat Rp 50.000 💡</div>
               <div className="plan-features">
                 <div className="plan-feature"><span className="check">✓</span> Masa Aktif 1 Bulan</div>
                 <div className="plan-feature"><span className="check">✓</span> Akses Semua Fitur AsistenToko</div>

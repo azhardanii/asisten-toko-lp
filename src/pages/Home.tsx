@@ -7,7 +7,6 @@ const APP_URL = 'https://app.asistentoko.com'
 
 export default function Home() {
   const appRef = useRef<HTMLDivElement>(null)
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
   const [isPdfModalOpen, setIsPdfModalOpen] = useState(false)
 
   // CTA links are now hardcoded in the JSX

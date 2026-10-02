@@ -199,8 +199,8 @@ export default function Home() {
                 lebih cepat, jualan lebih mudah.
               </p>
               <div className="hero-action-container">
-                {/* Buku Panduan Card / Widget (Di atas 'Mulai Sekarang' di mobile, di sebelah di desktop) */}
-                <div className="hero-guide-widget">
+                {/* Buku Panduan Card / Widget (Mode mobile: tetap di atas 'Mulai Sekarang') */}
+                <div className="hero-guide-widget mobile-guide-widget">
                   <div 
                     className="guide-widget-main" 
                     onClick={() => setIsPdfModalOpen(true)}
@@ -220,7 +220,7 @@ export default function Home() {
                     <div className="guide-widget-text">
                       <div className="guide-widget-badge-row">
                         <span className="guide-badge-pill">Buku Panduan</span>
-                        <span className="guide-badge-size">PDF · 50MB</span>
+                        <span className="guide-badge-size">Format PDF</span>
                       </div>
                       <div className="guide-widget-heading">Panduan AsistenToko</div>
                       <div className="guide-widget-sub">Pelajari alur &amp; fitur aplikasi</div>
@@ -232,7 +232,7 @@ export default function Home() {
                       onClick={() => setIsPdfModalOpen(true)}
                       className="guide-btn guide-btn-preview"
                       title="Lihat preview panduan langsung"
-                      id="guide-preview-btn"
+                      id="guide-preview-btn-mobile"
                     >
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -244,8 +244,8 @@ export default function Home() {
                       href={PDF_GUIDE_URL}
                       download={PDF_FILE_NAME}
                       className="guide-btn guide-btn-download"
-                      title="Download Buku Panduan PDF (50 MB)"
-                      id="guide-download-btn"
+                      title="Download Buku Panduan PDF"
+                      id="guide-download-btn-mobile"
                     >
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -405,6 +405,64 @@ export default function Home() {
                 <div style={{ fontSize: '12.5px', color: '#4B5563', lineHeight: 1.5, marginTop: '12px' }}>
                   <span style={{ color: '#047857', fontWeight: 700 }}>✅ Tersedia untuk Android</span><br />
                   <span style={{ opacity: 0.85 }}>Versi iOS/iPhone masih dalam tahap pengembangan.</span>
+                </div>
+              </div>
+
+              {/* Desktop Guide Block (Taruh di bawah section download pada mode desktop) */}
+              <div className="desktop-guide-block">
+                <div 
+                  className="guide-widget-main" 
+                  onClick={() => setIsPdfModalOpen(true)}
+                  role="button"
+                  tabIndex={0}
+                  title="Buka Preview Buku Panduan AsistenToko"
+                >
+                  <div className="guide-widget-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="guide-widget-svg">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                    </svg>
+                    <span className="guide-pulse-dot"></span>
+                  </div>
+                  <div className="guide-widget-text">
+                    <div className="guide-widget-badge-row">
+                      <span className="guide-badge-pill">Buku Panduan</span>
+                      <span className="guide-badge-size">Format PDF</span>
+                    </div>
+                    <div className="guide-widget-heading">Panduan AsistenToko</div>
+                    <div className="guide-widget-sub">Pelajari alur &amp; fitur aplikasi lengkap</div>
+                  </div>
+                </div>
+                <div className="guide-widget-actions">
+                  <button 
+                    type="button" 
+                    onClick={() => setIsPdfModalOpen(true)}
+                    className="guide-btn guide-btn-preview"
+                    title="Lihat preview panduan langsung"
+                    id="guide-preview-btn-desktop"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                    <span>Preview</span>
+                  </button>
+                  <a 
+                    href={PDF_GUIDE_URL}
+                    download={PDF_FILE_NAME}
+                    className="guide-btn guide-btn-download"
+                    title="Download Buku Panduan PDF"
+                    id="guide-download-btn-desktop"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="7 10 12 15 17 10"></polyline>
+                      <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    <span>Download</span>
+                  </a>
                 </div>
               </div>
             </div>

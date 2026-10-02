@@ -60,7 +60,7 @@ export default function PdfGuideModal({ isOpen, onClose }: PdfGuideModalProps) {
             <div>
               <div className="pdf-modal-header-meta">
                 <span className="pdf-badge-tag">Dokumen Resmi</span>
-                <span className="pdf-size-tag">PDF · 50 MB</span>
+                <span className="pdf-size-tag">Format PDF</span>
               </div>
               <h2 id="pdf-modal-title" className="pdf-modal-title">
                 Buku Panduan Penggunaan AsistenToko
@@ -118,7 +118,7 @@ export default function PdfGuideModal({ isOpen, onClose }: PdfGuideModalProps) {
           <div className="pdf-notice-content">
             <span className="pdf-notice-icon">💡</span>
             <span>
-              <strong>Petunjuk:</strong> File panduan ini lengkap mencakup alur pendaftaran, scan kamera, dan manajemen kasir (ukuran ~50MB). Jika di HP Anda layar preview terasa sempit atau lambat dimuat, gunakan tombol <strong>Buka di Tab Baru</strong> atau <strong>Download PDF</strong>.
+              <strong>Petunjuk:</strong> File panduan ini lengkap mencakup alur pendaftaran, scan kamera, dan manajemen kasir. Jika di HP Anda layar preview terasa sempit atau lambat dimuat, gunakan tombol <strong>Buka di Tab Baru</strong> atau <strong>Download PDF</strong>.
             </span>
           </div>
         </div>
@@ -129,7 +129,7 @@ export default function PdfGuideModal({ isOpen, onClose }: PdfGuideModalProps) {
             <div className="pdf-loading-overlay">
               <div className="pdf-spinner"></div>
               <p className="pdf-loading-text">Sedang menyiapkan preview panduan...</p>
-              <span className="pdf-loading-subtext">Ukuran file ~50 MB, mohon tunggu sebentar</span>
+              <span className="pdf-loading-subtext">Mohon tunggu sebentar...</span>
             </div>
           )}
 
@@ -157,7 +157,7 @@ export default function PdfGuideModal({ isOpen, onClose }: PdfGuideModalProps) {
                 <polyline points="7 10 12 15 17 10"></polyline>
                 <line x1="12" y1="15" x2="12" y2="3"></line>
               </svg>
-              Unduh Panduan PDF (50 MB)
+              Unduh Panduan PDF
             </a>
           </div>
         </div>

@@ -2200,24 +2200,85 @@
   order: 1;
 }
 
-.hero-guide-widget {
-  order: 2; /* Disebelah tombol Mulai Sekarang pada Desktop */
-  display: inline-flex;
+.hero-btn-trial {
+  order: 2;
+}
+
+/* Mobile Guide Widget - Hidden on Desktop */
+.mobile-guide-widget {
+  display: none !important;
+}
+
+/* Desktop Guide Block - Below Download App Section */
+.desktop-guide-block {
+  display: flex !important;
+  flex-direction: column;
+  background: linear-gradient(145deg, rgba(22, 163, 74, 0.08), rgba(22, 163, 74, 0.02));
+  border: 1.5px solid rgba(22, 163, 74, 0.2);
+  border-radius: 16px;
+  padding: 14px 16px;
+  max-width: 320px;
+  width: 100%;
+  margin: -24px auto 0;
+  gap: 12px;
+  box-shadow: 0 4px 18px rgba(22, 163, 74, 0.1);
+  transition: all 0.25s ease;
+  z-index: 10;
+}
+
+.desktop-guide-block:hover {
+  border-color: #22c55e;
+  box-shadow: 0 8px 24px rgba(22, 163, 74, 0.18);
+  transform: translateY(-2px);
+}
+
+.desktop-guide-block .guide-widget-main {
+  display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+  gap: 10px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.desktop-guide-block .guide-widget-heading {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.desktop-guide-block .guide-widget-sub {
+  font-size: 11.5px;
+  color: #64748b;
+  display: block;
+}
+
+.desktop-guide-block .guide-widget-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  width: 100%;
+  border-left: none;
+  padding-left: 0;
+}
+
+.desktop-guide-block .guide-btn {
+  justify-content: center;
+  padding: 8px 12px;
+  font-size: 13px;
+  border-radius: 8px;
+}
+
+/* Shared Guide Widget Elements */
+.hero-guide-widget {
+  background: linear-gradient(145deg, #ffffff 0%, #f0fdf4 100%);
   border: 1.5px solid #86efac;
   border-radius: 14px;
-  padding: 6px 12px;
-  box-shadow: 0 4px 18px rgba(22, 163, 74, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  padding: 12px 14px;
+  box-shadow: 0 4px 18px rgba(22, 163, 74, 0.12);
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   gap: 12px;
   position: relative;
-}
-
-.hero-guide-widget:hover {
-  border-color: #22c55e;
-  box-shadow: 0 8px 24px rgba(22, 163, 74, 0.22);
-  transform: translateY(-2px);
 }
 
 .guide-widget-main {
@@ -2229,8 +2290,8 @@
 }
 
 .guide-widget-icon-box {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 10px;
   background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
   color: #15803d;
@@ -2299,31 +2360,29 @@
 }
 
 .guide-widget-heading {
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 700;
   color: #0f172a;
-  white-space: nowrap;
 }
 
 .guide-widget-sub {
   font-size: 11px;
   color: #64748b;
-  display: none;
+  display: block;
 }
 
 .guide-widget-actions {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  border-left: 1px solid rgba(22, 163, 74, 0.25);
-  padding-left: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  width: 100%;
 }
 
 .guide-btn {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 6px 12px;
+  padding: 8px 12px;
   border-radius: 8px;
   font-size: 12.5px;
   font-weight: 600;
@@ -2331,6 +2390,7 @@
   text-decoration: none;
   transition: all 0.2s ease;
   border: none;
+  justify-content: center;
 }
 
 .guide-btn-preview {
@@ -2357,25 +2417,16 @@
   box-shadow: 0 3px 10px rgba(22, 163, 74, 0.35);
 }
 
-.hero-btn-trial {
-  order: 3;
-}
-
-/* Mobile responsive layout for Hero Guide */
-@media (max-width: 768px) {
-  .hero-action-container {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-    width: 100%;
-    margin-bottom: 28px;
+/* Mobile & Tablet Layout */
+@media (max-width: 1024px) {
+  .desktop-guide-block {
+    display: none !important;
   }
 
-  .hero-guide-widget {
-    order: 1; /* DI ATAS tombol Mulai Sekarang pada Mobile */
+  .mobile-guide-widget {
+    display: flex !important;
+    order: 1; /* Di atas tombol Mulai Sekarang */
     width: 100%;
-    display: flex;
     flex-direction: column;
     align-items: stretch;
     padding: 14px 16px;
@@ -2385,39 +2436,13 @@
     box-shadow: 0 4px 18px rgba(22, 163, 74, 0.14);
   }
 
-  .guide-widget-main {
-    justify-content: flex-start;
+  .hero-action-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
     width: 100%;
-  }
-
-  .guide-widget-icon-box {
-    width: 40px;
-    height: 40px;
-  }
-
-  .guide-widget-heading {
-    font-size: 14.5px;
-    white-space: normal;
-  }
-
-  .guide-widget-sub {
-    display: block;
-  }
-
-  .guide-widget-actions {
-    border-left: none;
-    padding-left: 0;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-  }
-
-  .guide-btn {
-    justify-content: center;
-    padding: 10px 14px;
-    font-size: 13.5px;
-    border-radius: 10px;
+    margin-bottom: 28px;
   }
 
   .hero-btn-start {

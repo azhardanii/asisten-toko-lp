@@ -110,7 +110,7 @@ export default function ConversionBoosters() {
       usedNamesRef.current.add(nextBuyer.name)
       setActiveToast(nextBuyer)
 
-      // Stay visible for exactly 3 seconds (3000ms)
+      // Stay visible for 7.5 seconds (7500ms)
       hideToastTimer = setTimeout(() => {
         if (isUnmounted) return
         setActiveToast(null)
@@ -118,7 +118,7 @@ export default function ConversionBoosters() {
         // Schedule next popup at random interval between 30 - 60 seconds (30000ms - 60000ms)
         const randomDelayMs = Math.floor(Math.random() * (60000 - 30000 + 1)) + 30000
         nextPopupTimer = setTimeout(triggerToast, randomDelayMs)
-      }, 3000)
+      }, 7500)
     }
 
     // Start first appearance 1 minute (60,000ms) after landing page is accessed

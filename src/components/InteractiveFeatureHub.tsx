@@ -173,7 +173,7 @@ interface InteractiveFeatureHubProps {
 }
 
 export default function InteractiveFeatureHub({ onOpenCheckout }: InteractiveFeatureHubProps) {
-  const [activeFeature, setActiveFeature] = useState<FeatureKey>('scan_ai')
+  const [activeFeature, setActiveFeature] = useState<FeatureKey | null>(null)
   const [isArcOpen, setIsArcOpen] = useState<boolean>(true)
 
   // Interactive states inside the live simulator preview
@@ -191,7 +191,7 @@ export default function InteractiveFeatureHub({ onOpenCheckout }: InteractiveFea
   const [kulakanAdded, setKulakanAdded] = useState<boolean>(false)
   const [isOfflineSim, setIsOfflineSim] = useState<boolean>(false)
 
-  const current = FEATURE_DATA[activeFeature]
+  const current = activeFeature ? FEATURE_DATA[activeFeature] : FEATURE_DATA.scan_ai
 
   const handleSelectFeature = (key: FeatureKey) => {
     setActiveFeature(key)
@@ -411,7 +411,7 @@ export default function InteractiveFeatureHub({ onOpenCheckout }: InteractiveFea
           </div>
 
           {/* ===== DYNAMIC INTERACTIVE FEATURE SHOWCASE PANEL ===== */}
-          <div className="sim-detail-panel" key={activeFeature}>
+          <div className="sim-detail-panel" key={activeFeature || 'default'}>
             {/* Left Content: Copywriting & Value Proposition */}
             <div className="sim-left-content">
               <div>
@@ -462,7 +462,7 @@ export default function InteractiveFeatureHub({ onOpenCheckout }: InteractiveFea
             {/* Right Content: Live Interactive Mini-App Simulator */}
             <div className="sim-right-preview">
               {/* 1. SCAN AI */}
-              {activeFeature === 'scan_ai' && (
+              {(activeFeature === 'scan_ai' || activeFeature === null) && (
                 <div className="sim-live-card">
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
                     <span style={{ fontSize: '12px', fontWeight: 800, color: '#0f7c44', background: '#dcfce7', padding: '4px 10px', borderRadius: '100px' }}>

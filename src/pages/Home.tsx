@@ -89,7 +89,7 @@ export default function Home() {
 
     const safePlay = () => {
       video.muted = true
-      video.play().catch(() => {})
+      video.play().catch(() => { })
     }
 
     safePlay()
@@ -234,8 +234,8 @@ export default function Home() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             navLinks.forEach((link) => {
-              ;(link as HTMLElement).style.color = ''
-              ;(link as HTMLElement).style.background = ''
+              ; (link as HTMLElement).style.color = ''
+                ; (link as HTMLElement).style.background = ''
             })
             const activeLink = document.querySelector(
               `.nav-link[href="#${entry.target.id}"]`
@@ -357,7 +357,7 @@ export default function Home() {
             disablePictureInPicture
             onEnded={(e) => {
               e.currentTarget.currentTime = 0
-              e.currentTarget.play().catch(() => {})
+              e.currentTarget.play().catch(() => { })
             }}
           />
           <div className="hero-v2-overlay"></div>
@@ -368,20 +368,20 @@ export default function Home() {
           <div className="hero-v2-top">
             <div className="hero-v2-eyebrow">
               <div className="eyebrow-dot"></div>
-              AI-Powered · Scan · Simple
+              Scan Tanpa Barcode · Bisa Offline · Sekali Beli Selamanya
             </div>
 
             <h1 className="hero-v2-title">
-              Pencatatan Instan,
+              Jualan Lebih Cepat &amp; Tenang:
               <br />
-              Cukup <span className="hero-v2-highlight">Scan</span> Produk
+              Cukup <span className="hero-v2-highlight">Scan Kamera</span>, Bisa Offline,
               <br />
-              Tanpa Hafal Harga.
+              Sekali Beli Selamanya.
             </h1>
 
             <p className="hero-v2-desc">
-              Arahkan kamera. Jual. Selesai. AsistenToko hadir 24/7 untuk mengenali produk lewat kamera HP. Transaksi
-              lebih cepat, jualan lebih mudah.
+              Kenali produk tanpa barcode lewat kamera HP, transaksi tetap lancar walau tanpa internet,
+              dan nikmati akses seumur hidup tanpa biaya langganan.
             </p>
           </div>
 

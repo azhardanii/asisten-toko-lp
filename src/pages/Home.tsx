@@ -372,7 +372,7 @@ export default function Home() {
             </div>
 
             <h1 className="hero-v2-title">
-              Jualan Lebih Cepat, Cukup <span className="hero-v2-highlight">Scan Kamera</span>. <span className="br-desktop" />Bisa Offline &amp; Sekali Beli Selamanya.
+              Jualan Lebih Cepat, Cukup<span className="br-mobile" /> <span className="hero-v2-highlight">Scan Kamera</span>.<span className="br-desktop" /><span className="br-mobile" /> Bisa Offline &amp; Sekali Beli<span className="desktop-inline"> Selamanya</span>.
             </h1>
 
             <p className="hero-v2-desc">

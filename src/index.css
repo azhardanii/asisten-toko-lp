@@ -4513,6 +4513,12 @@
   margin-bottom: 14px;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  white-space: nowrap;
+  max-width: 95%;
+  justify-content: center;
+  white-space: nowrap;
+  max-width: 95%;
+  justify-content: center;
 }
 
 .hero-v2-title {
@@ -4668,8 +4674,8 @@
 
 @media (max-width: 768px) {
   .hero.hero-v2 {
-    padding-top: 108px;
-    padding-bottom: 28px;
+    padding-top: 86px;
+    padding-bottom: 24px;
     min-height: 100svh;
   }
 
@@ -4700,21 +4706,38 @@
     margin-bottom: 12px;
   }
 
-  .hero-v2-title {
-    font-size: 28px;
-    line-height: 1.15;
+  .hero-v2-top {
+    padding: 0 8px;
+    max-width: 100%;
+  }
+
+  .hero-v2-eyebrow {
+    font-size: 11px;
+    padding: 4px 12px;
     margin-bottom: 10px;
+    white-space: nowrap;
+    max-width: 96%;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-v2-title {
+    font-size: clamp(20px, 5.8vw, 24px);
+    line-height: 1.24;
+    letter-spacing: -0.025em;
+    margin-bottom: 8px;
+    text-wrap: balance;
   }
 
   .hero-v2-desc {
-    font-size: 13px;
-    line-height: 1.48;
-    max-width: 340px;
+    font-size: 12.5px;
+    line-height: 1.46;
+    max-width: 320px;
     margin: 0 auto;
+    text-wrap: balance;
   }
 
   .hero-v2-middle-spacer {
-    min-height: 220px;
+    min-height: 180px;
   }
 
   .hero-v2-cta-row {
@@ -4750,5 +4773,38 @@
   .hero-quick-apk-btn {
     width: 100%;
     justify-content: center;
+  }
+}
+
+/* Responsive Line Break & Inline Visibility Helpers */
+.br-desktop {
+  display: block;
+}
+
+.desktop-inline {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .br-desktop {
+    display: none !important;
+  }
+  .desktop-inline {
+    display: none !important;
+  }
+}
+@media (max-width: 380px) {
+  .hero.hero-v2 {
+    padding-top: 78px;
+  }
+  .hero-v2-eyebrow {
+    font-size: 9.8px;
+    padding: 3px 10px;
+  }
+  .hero-v2-title {
+    font-size: 19.5px;
+  }
+  .hero-v2-desc {
+    font-size: 11.5px;
   }
 }

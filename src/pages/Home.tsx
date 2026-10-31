@@ -368,20 +368,15 @@ export default function Home() {
           <div className="hero-v2-top">
             <div className="hero-v2-eyebrow">
               <div className="eyebrow-dot"></div>
-              Scan Tanpa Barcode · Bisa Offline · Sekali Beli Selamanya
+              <span>Scan Tanpa Barcode · Bisa Offline · Sekali Beli<span className="desktop-inline"> Selamanya</span></span>
             </div>
 
             <h1 className="hero-v2-title">
-              Jualan Lebih Cepat &amp; Tenang:
-              <br />
-              Cukup <span className="hero-v2-highlight">Scan Kamera</span>, Bisa Offline,
-              <br />
-              Sekali Beli Selamanya.
+              Jualan Lebih Cepat, Cukup <span className="hero-v2-highlight">Scan Kamera</span>. <span className="br-desktop" />Bisa Offline &amp; Sekali Beli Selamanya.
             </h1>
 
             <p className="hero-v2-desc">
-              Kenali produk tanpa barcode lewat kamera HP, transaksi tetap lancar walau tanpa internet,
-              dan nikmati akses seumur hidup tanpa biaya langganan.
+              Kenali barang lewat kamera HP, tetap lancar walau tanpa internet, dan bebas biaya langganan selamanya.
             </p>
           </div>
 

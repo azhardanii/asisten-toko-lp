@@ -131,7 +131,7 @@ const FEATURE_DATA: Record<FeatureKey, FeatureDetailData> = {
     benefits: [
       'Harga modal (HPP) & Laba Bersih disensor otomatis dari akun Kasir dan Gudang',
       'Tercatat jelas siapa nama kasir yang melayani setiap nota transaksi',
-      'Keamanan ekstra 1 Akun = 1 HP Aktif agar akun tidak dibuka sembarangan di luar toko',
+      'Login Fleksibel: Dukungan Banyak Device (HP, Tablet, Laptop) & Kelola Banyak Cabang Toko dalam 1 Akun',
     ],
   },
   opname: {

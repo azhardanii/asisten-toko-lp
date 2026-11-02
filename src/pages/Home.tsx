@@ -1108,7 +1108,7 @@ export default function Home() {
                     Untuk toko berkembang dengan tim staf kasir dan staf gudang
                   </p>
                 </div>
-                <span className="biz-role-pill">Multi-User</span>
+                <span className="biz-role-pill">Banyak Device &amp; Toko</span>
               </div>
 
               {/* 3-Tab Duration Switcher (1 Bulan | 3 Bulan | 1 Tahun) */}
@@ -1178,7 +1178,7 @@ export default function Home() {
                 <div className="biz-feature-item">
                   <span className="biz-feature-check">✓</span>
                   <span>
-                    <strong>Multi-User Role:</strong> Owner, Kasir, dan Staf Gudang (Bisa invite banyak kasir)
+                    <strong>Banyak Device &amp; Banyak Toko:</strong> 1 akun bisa diakses dari berbagai perangkat (Laptop, Tablet, HP) &amp; kelola banyak cabang toko sekaligus
                   </span>
                 </div>
                 <div className="biz-feature-item">
@@ -1313,7 +1313,7 @@ export default function Home() {
                       </p>
                     </div>
                     <div className="basic-badges-col">
-                      <span className="basic-pill-amber">Single User (1 Device)</span>
+                      <span className="basic-pill-amber">Banyak Device (Multi-Device)</span>
                       <span className="basic-pill-amber" style={{ background: '#fef3c7' }}>
                         Beli Putus
                       </span>
@@ -1334,7 +1334,7 @@ export default function Home() {
                     </div>
                     <div className="basic-feature-item">
                       <span className="basic-check amber">✓</span>
-                      <span>1 Akun Pengguna (Single User, 1 Device aktif)</span>
+                      <span><strong>Login Banyak Device:</strong> Akses toko yang sama fleksibel dari HP, Tablet, maupun Laptop</span>
                     </div>
                     <div className="basic-feature-item">
                       <span className="basic-check amber">✓</span>
@@ -1365,7 +1365,7 @@ export default function Home() {
                   onClick={() =>
                     handleOpenCheckout(
                       'Paket Basic Lifetime ~ AsistenToko',
-                      'Rp 149.000 / sekali bayar seumur hidup (Beli Putus)',
+                      'Rp 149.000 / sekali bayar seumur hidup (Banyak Device)',
                       CHECKOUT_LINKS.basicLifetime,
                       'Paket Basic Lifetime'
                     )
@@ -1491,7 +1491,7 @@ export default function Home() {
               </button>
               <div className="faq-body">
                 <p className="faq-ans">
-                  <strong>Paket Basic Bulanan (Rp 99.000)</strong> cocok untuk toko yang dijaga sendiri oleh pemilik (1 perangkat) dan sudah termasuk Scan AI. <strong>Paket Basic Lifetime (Rp 149.000)</strong> cukup sekali bayar untuk selamanya (1 perangkat, scan barcode standar, bisa tambah Add-on kapan saja). Sedangkan <strong>Paket Business</strong> dirancang untuk toko yang punya karyawan karena mendukung banyak akun (Owner, Kasir, Gudang), sensor rahasia modal (HPP), dan rekap shift kasir.
+                  <strong>Paket Basic Bulanan (Rp 99.000)</strong> cocok untuk toko mandiri (limit 1 device) dan sudah termasuk Scan AI. <strong>Paket Basic Lifetime (Rp 149.000)</strong> beli putus selamanya dan kini sudah mendukung <strong>login Banyak Device</strong> (akses fleksibel dari Laptop, Tablet, &amp; HP sekaligus). Sedangkan <strong>Paket Business</strong> mendukung penuh <strong>Banyak Device + Banyak Toko</strong> (kelola lebih dari satu cabang toko dalam 1 akun), multi-user staf kasir, sensor rahasia modal (HPP), dan rekap shift kasir.
                 </p>
               </div>
             </div>

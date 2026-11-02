@@ -1261,27 +1261,31 @@ export default function Home() {
                   <div className="basic-feature-list">
                     <div className="basic-feature-item">
                       <span className="basic-check">✓</span>
-                      <span>1 Akun Pengguna (Owner &amp; Kasir Tunggal, 1 Device aktif)</span>
+                      <span>1 Akun Pengguna (Single User)</span>
                     </div>
                     <div className="basic-feature-item">
                       <span className="basic-check">✓</span>
-                      <span>AI Vision Scan Terintegrasi (Scan produk tanpa barcode)</span>
+                      <span>AI Vision Scan Terintegrasi (Scan tanpa barcode)</span>
                     </div>
                     <div className="basic-feature-item">
                       <span className="basic-check">✓</span>
-                      <span>Fitur Kasir Cepat, Buku Kasbon, &amp; Cetak Struk Bluetooth</span>
+                      <span>Kasir Cepat, Buku Kasbon WA, &amp; Struk Bluetooth</span>
                     </div>
                     <div className="basic-feature-item">
                       <span className="basic-check">✓</span>
-                      <span>Katalog Produk, Varian Satuan (Dus/Ecer), &amp; Barcode Produk</span>
+                      <span>Katalog Produk, Varian Satuan, &amp; CRM Pelanggan</span>
                     </div>
-                    <div className="basic-feature-item">
-                      <span className="basic-check">✓</span>
-                      <span>CRM Toko: Database Pelanggan, Poin, &amp; Voucher Promo</span>
+                    <div className="basic-feature-item disabled">
+                      <span className="basic-cross">❌</span>
+                      <span>Banyak Device (Hanya 1 Perangkat Aktif)</span>
                     </div>
-                    <div className="basic-feature-item">
-                      <span className="basic-check">✓</span>
-                      <span>Laporan Penjualan &amp; Rekap Keuangan</span>
+                    <div className="basic-feature-item disabled">
+                      <span className="basic-cross">❌</span>
+                      <span>Banyak Toko (Hanya 1 Cabang Toko)</span>
+                    </div>
+                    <div className="basic-feature-item disabled">
+                      <span className="basic-cross">❌</span>
+                      <span>Multi-User Kasir &amp; Sensor Modal HPP</span>
                     </div>
                   </div>
                 </div>
@@ -1329,32 +1333,32 @@ export default function Home() {
                     <div className="basic-feature-item">
                       <span className="basic-check amber">✓</span>
                       <span>
-                        <strong>Akses Seumur Hidup</strong> (Bebas Tagihan Bulanan / Tanpa Biaya Berulang)
+                        <strong>Akses Seumur Hidup</strong> (Sekali Bayar Selamanya / Tanpa Tagihan Bulanan)
                       </span>
                     </div>
                     <div className="basic-feature-item">
                       <span className="basic-check amber">✓</span>
-                      <span><strong>Login Banyak Device:</strong> Akses toko yang sama fleksibel dari HP, Tablet, maupun Laptop</span>
+                      <span><strong>Login Banyak Device:</strong> Buka fleksibel dari Laptop, Tablet, &amp; HP</span>
                     </div>
                     <div className="basic-feature-item">
                       <span className="basic-check amber">✓</span>
-                      <span>Fitur Kasir Cepat, Buku Kasbon, &amp; Cetak Struk Bluetooth</span>
+                      <span>Kasir Cepat, Buku Kasbon WA, Struk Bluetooth, &amp; CRM</span>
                     </div>
                     <div className="basic-feature-item">
                       <span className="basic-check amber">✓</span>
-                      <span>Scan Barcode Standar &amp; Hardware Barcode Scanner</span>
+                      <span>Scan Barcode Standar Kemasan (Kamera &amp; Hardware)</span>
                     </div>
-                    <div className="basic-feature-item">
-                      <span className="basic-check amber">✓</span>
-                      <span>Katalog Produk, Stok Gudang, &amp; Varian Satuan</span>
+                    <div className="basic-feature-item disabled">
+                      <span className="basic-cross">❌</span>
+                      <span><strong>Tidak Bisa Scan AI</strong> (Harus tambah Add-on jika butuh)</span>
                     </div>
-                    <div className="basic-feature-item">
-                      <span className="basic-check amber">✓</span>
-                      <span>CRM Toko: Database Pelanggan, Poin, &amp; Voucher Promo</span>
+                    <div className="basic-feature-item disabled">
+                      <span className="basic-cross">❌</span>
+                      <span>Banyak Toko (Hanya 1 Cabang Toko)</span>
                     </div>
-                    <div className="basic-feature-item">
-                      <span className="basic-check amber">✓</span>
-                      <span>Dapat upgrade ke AI Scan / Business kapan saja via Add-on</span>
+                    <div className="basic-feature-item disabled">
+                      <span className="basic-cross">❌</span>
+                      <span>Multi-User Kasir &amp; Sensor Modal HPP</span>
                     </div>
                   </div>
                 </div>

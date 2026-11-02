@@ -12,12 +12,63 @@ const APP_URL = 'https://app.asistentoko.com'
 const CHECKOUT_LINKS = {
   freeTrial: 'http://lynk.id/usahatokosembako/g7zr8vnlrv6e/checkout',
   basicMonthly: 'http://lynk.id/usahatokosembako/379l8jz16m9q/checkout',
+  basic1Month: 'http://lynk.id/usahatokosembako/379l8jz16m9q/checkout',
+  basic3Months: 'http://lynk.id/usahatokosembako/drojg6o34jl8/checkout',
+  basic1Year: 'http://lynk.id/usahatokosembako/wr8j298g56m4/checkout',
   basicLifetime: 'http://lynk.id/usahatokosembako/w2d613qg61q9/checkout',
   business1Month: 'http://lynk.id/usahatokosembako/85v23g9p6v86/checkout',
   business3Months: 'http://lynk.id/usahatokosembako/g5w147m1jo8o/checkout',
   business1Year: 'http://lynk.id/usahatokosembako/erp1exgo0ozm/checkout',
   addonScanAi: 'http://lynk.id/usahatokosembako/4ov97x58kov3/checkout',
   addonUpgradeBusiness: 'http://lynk.id/usahatokosembako/o2dp4zkgll1y/checkout',
+}
+
+
+type BasicDuration = '1_bulan' | '3_bulan' | '1_tahun'
+
+const BASIC_PLANS: Record<
+  BasicDuration,
+  {
+    tabLabel: string
+    price: string
+    period: string
+    subnote: string
+    btnText: string
+    url: string
+    modalTitle: string
+    modalPrice: string
+  }
+> = {
+  '1_bulan': {
+    tabLabel: '1 Bulan',
+    price: 'Rp 99.000',
+    period: '/ bulan',
+    subnote: 'Paket langganan bulanan fleksibel',
+    btnText: 'Pilih Basic (1 Bulan) →',
+    url: CHECKOUT_LINKS.basic1Month,
+    modalTitle: 'Paket Basic 1 Bulan ~ AsistenToko',
+    modalPrice: 'Rp 99.000 / bulan (Single User - 1 Perangkat)',
+  },
+  '3_bulan': {
+    tabLabel: '3 Bulan',
+    price: 'Rp 219.000',
+    period: '/ 3 bulan',
+    subnote: 'Hemat Rp 78.000 (Setara Rp 73.000/bln)',
+    btnText: 'Pilih Basic (3 Bulan) →',
+    url: CHECKOUT_LINKS.basic3Months,
+    modalTitle: 'Paket Basic 3 Bulan ~ AsistenToko',
+    modalPrice: 'Rp 219.000 / 3 bulan (Hemat Rp 78.000)',
+  },
+  '1_tahun': {
+    tabLabel: '1 Tahun',
+    price: 'Rp 699.000',
+    period: '/ tahun',
+    subnote: 'Paling Hemat! Cuma ~Rp 58.250/bulan',
+    btnText: 'Pilih Basic (1 Tahun) →',
+    url: CHECKOUT_LINKS.basic1Year,
+    modalTitle: 'Paket Basic 1 Tahun ~ AsistenToko',
+    modalPrice: 'Rp 699.000 / tahun (Paling Hemat 🔥 ~Rp 58.250/bln)',
+  },
 }
 
 type BusinessDuration = '1_bulan' | '3_bulan' | '1_tahun'
@@ -75,6 +126,7 @@ export default function Home() {
   const [isPdfModalOpen, setIsPdfModalOpen] = useState(false)
   const [selectedCheckout, setSelectedCheckout] = useState<CheckoutPlanInfo | null>(null)
   const [bizDuration, setBizDuration] = useState<BusinessDuration>('1_bulan')
+  const [basicDuration, setBasicDuration] = useState<BasicDuration>('1_bulan')
   const [isInHero, setIsInHero] = useState(true)
 
   // ===== Hero Background Video: Strict Mute, Seamless Loop & Viewport Performance =====
@@ -267,6 +319,7 @@ export default function Home() {
   }, [setupCursorGlow, setupNavbarScroll, setupReveal, setupFAQ, setupCounters, setupNavActive])
 
   const activeBizPlan = BUSINESS_PLANS[bizDuration]
+  const activeBasicPlan = BASIC_PLANS[basicDuration]
 
   return (
     <div ref={appRef}>
@@ -1102,13 +1155,15 @@ export default function Home() {
               </div>
 
               <div className="biz-card-header">
-                <div>
-                  <h3 className="biz-card-title">Paket Business</h3>
+                <div className="card-top-content">
+                  <div className="card-title-row">
+                    <h3 className="biz-card-title">Paket Business</h3>
+                    <span className="biz-role-pill">Banyak Device &amp; Toko</span>
+                  </div>
                   <p className="biz-card-sub">
                     Untuk toko berkembang dengan tim staf kasir dan staf gudang
                   </p>
                 </div>
-                <span className="biz-role-pill">Banyak Device &amp; Toko</span>
               </div>
 
               {/* 3-Tab Duration Switcher (1 Bulan | 3 Bulan | 1 Tahun) */}
@@ -1240,22 +1295,62 @@ export default function Home() {
 
             {/* RIGHT COLUMN: PAKET BASIC BULANAN & PAKET BASIC LIFETIME (Matches Image 4) */}
             <div className="basic-cards-stack">
-              {/* Card 1: Paket Basic (Bulanan) */}
+              {/* Card 1: Paket Basic (Berlangganan) */}
               <div className="basic-tier-card">
                 <div>
                   <div className="basic-card-top">
-                    <div>
-                      <h3 className="basic-card-title">Paket Basic (Bulanan)</h3>
+                    <div className="card-top-content">
+                      <div className="card-title-row">
+                        <h3 className="basic-card-title">Paket Basic</h3>
+                        <span className="basic-pill-gray">Single User (1 Device)</span>
+                      </div>
                       <p className="basic-card-sub">
-                        Cocok untuk toko mandiri yang dikelola owner sendiri
+                        Cocok untuk toko mandiri yang dikelola langsung oleh owner sendiri
                       </p>
                     </div>
-                    <span className="basic-pill-gray">Single User (1 Device)</span>
                   </div>
 
-                  <div className="basic-price-row">
-                    <span className="basic-price-amount">Rp 99.000</span>
-                    <span className="basic-price-period">/ bulan</span>
+                  {/* 3-Tab Duration Switcher for Basic (1 Bulan | 3 Bulan | 1 Tahun) */}
+                  <div className="biz-duration-tabs basic-tabs" role="tablist" aria-label="Pilih durasi Paket Basic">
+                    <button
+                      type="button"
+                      role="tab"
+                      aria-selected={basicDuration === '1_bulan'}
+                      className={`biz-tab-btn ${basicDuration === '1_bulan' ? 'active' : ''}`}
+                      onClick={() => setBasicDuration('1_bulan')}
+                    >
+                      <span className="biz-tab-label">1 Bulan</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      role="tab"
+                      aria-selected={basicDuration === '3_bulan'}
+                      className={`biz-tab-btn ${basicDuration === '3_bulan' ? 'active' : ''}`}
+                      onClick={() => setBasicDuration('3_bulan')}
+                    >
+                      <span className="biz-tab-mini-badge hemat">Hemat</span>
+                      <span className="biz-tab-label">3 Bulan</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      role="tab"
+                      aria-selected={basicDuration === '1_tahun'}
+                      className={`biz-tab-btn ${basicDuration === '1_tahun' ? 'active' : ''}`}
+                      onClick={() => setBasicDuration('1_tahun')}
+                    >
+                      <span className="biz-tab-mini-badge best">Best Value 🔥</span>
+                      <span className="biz-tab-label">1 Tahun</span>
+                    </button>
+                  </div>
+
+                  <div className="biz-price-block">
+                    <div className="basic-price-row">
+                      <span className="basic-price-amount">{activeBasicPlan.price}</span>
+                      <span className="basic-price-period">{activeBasicPlan.period}</span>
+                    </div>
+                    <div className="biz-price-subnote">{activeBasicPlan.subnote}</div>
                   </div>
 
                   <div className="basic-feature-list">
@@ -1295,14 +1390,14 @@ export default function Home() {
                   className="basic-outline-btn"
                   onClick={() =>
                     handleOpenCheckout(
-                      'Paket Basic 1 Bulan ~ AsistenToko',
-                      'Rp 99.000 / bulan (Single User - 1 Perangkat)',
-                      CHECKOUT_LINKS.basicMonthly,
-                      'Paket Basic Bulanan'
+                      activeBasicPlan.modalTitle,
+                      activeBasicPlan.modalPrice,
+                      activeBasicPlan.url,
+                      'Paket Basic'
                     )
                   }
                 >
-                  Pilih Basic Bulanan (Rp 99.000)
+                  {activeBasicPlan.btnText}
                 </button>
               </div>
 
@@ -1310,17 +1405,19 @@ export default function Home() {
               <div className="basic-tier-card lifetime-variant">
                 <div>
                   <div className="basic-card-top">
-                    <div>
-                      <h3 className="basic-card-title">Paket Basic Lifetime</h3>
+                    <div className="card-top-content">
+                      <div className="card-title-row">
+                        <h3 className="basic-card-title">Paket Basic Lifetime</h3>
+                        <div className="basic-badges-col">
+                          <span className="basic-pill-amber">Banyak Device</span>
+                          <span className="basic-pill-amber" style={{ background: '#fef3c7' }}>
+                            Beli Putus
+                          </span>
+                        </div>
+                      </div>
                       <p className="basic-card-sub">
                         Sekali bayar untuk penggunaan selamanya tanpa biaya langganan berulang
                       </p>
-                    </div>
-                    <div className="basic-badges-col">
-                      <span className="basic-pill-amber">Banyak Device (Multi-Device)</span>
-                      <span className="basic-pill-amber" style={{ background: '#fef3c7' }}>
-                        Beli Putus
-                      </span>
                     </div>
                   </div>
 

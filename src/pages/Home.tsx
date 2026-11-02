@@ -348,7 +348,7 @@ export default function Home() {
           <video
             ref={heroVideoRef}
             className="hero-v2-video"
-            src="/video-background.webm"
+            src="/hero-background.webm"
             autoPlay
             loop
             muted

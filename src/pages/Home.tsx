@@ -1133,7 +1133,7 @@ export default function Home() {
       <section className="pricing-section" id="harga">
         <div className="container">
           <div className="section-head reveal">
-            <div className="section-label">💰 Pilihan Paket Resmi AsistenToko</div>
+            <div className="section-label">💰 Pilihan Paket AsistenToko</div>
             <h2 className="section-title">
               Investasi Kecil untuk Toko yang
               <br />
@@ -1293,54 +1293,54 @@ export default function Home() {
               </div>
             </div>
 
-            {/* RIGHT COLUMN: PAKET BASIC BULANAN & PAKET BASIC LIFETIME (Matches Image 4) */}                 
-              {/* Card 2: Paket Basic Lifetime */}
-              <div className="basic-tier-card lifetime-variant">
+                        {/* RIGHT COLUMN: PAKET BASIC BULANAN & PAKET BASIC LIFETIME */}
+            <div className="pricing-right-col">
+              {/* Card 1: Paket Basic Bulanan */}
+              <div className="basic-tier-card">
                 <div>
                   <div className="basic-card-top">
                     <div className="card-top-content">
                       <div className="card-title-row">
-                        <h3 className="basic-card-title">Paket Basic Lifetime</h3>
+                        <h3 className="basic-card-title">Paket Basic</h3>
                         <div className="basic-badges-col">
-                          <span className="basic-pill-amber">Banyak Device</span>
-                          <span className="basic-pill-amber" style={{ background: '#fef3c7' }}>
-                            Beli Putus
-                          </span>
+                          <span className="basic-pill-green">1 Device</span>
                         </div>
                       </div>
                       <p className="basic-card-sub">
-                        Sekali bayar untuk penggunaan selamanya tanpa biaya langganan berulang
+                        Untuk toko mandiri yang dikelola sendiri oleh pemilik
                       </p>
                     </div>
                   </div>
 
-                  <div className="basic-price-row">
-                    <span className="basic-price-amount amber">Rp 149.000</span>
-                    <span className="basic-price-period">/ sekali bayar</span>
+                  <div className="biz-duration-tabs" role="tablist" aria-label="Pilih durasi Paket Basic">
+                    {(Object.keys(BASIC_PLANS) as BasicDuration[]).map((key) => (
+                      <button
+                        key={key}
+                        type="button"
+                        role="tab"
+                        aria-selected={basicDuration === key}
+                        className={`biz-tab-btn ${basicDuration === key ? 'active' : ''}`}
+                        onClick={() => setBasicDuration(key)}
+                      >
+                        <span className="biz-tab-label">{BASIC_PLANS[key].tabLabel}</span>
+                      </button>
+                    ))}
                   </div>
+
+                  <div className="basic-price-row">
+                    <span className="basic-price-amount">{activeBasicPlan.price}</span>
+                    <span className="basic-price-period">{activeBasicPlan.period}</span>
+                  </div>
+                  <div className="biz-price-subnote">{activeBasicPlan.subnote}</div>
 
                   <div className="basic-feature-list">
                     <div className="basic-feature-item">
-                      <span className="basic-check amber">✓</span>
-                      <span>
-                        <strong>Akses Seumur Hidup</strong> (Sekali Bayar Selamanya / Tanpa Tagihan Bulanan)
-                      </span>
+                      <span className="basic-check">✓</span>
+                      <span><strong>Scan AI Kamera</strong> untuk barang tanpa barcode</span>
                     </div>
                     <div className="basic-feature-item">
-                      <span className="basic-check amber">✓</span>
-                      <span><strong>Login Banyak Device:</strong> Buka fleksibel dari Laptop, Tablet, &amp; HP</span>
-                    </div>
-                    <div className="basic-feature-item">
-                      <span className="basic-check amber">✓</span>
+                      <span className="basic-check">✓</span>
                       <span>Kasir Cepat, Buku Kasbon WA, Struk Bluetooth, &amp; CRM</span>
-                    </div>
-                    <div className="basic-feature-item">
-                      <span className="basic-check amber">✓</span>
-                      <span>Scan Barcode Standar Kemasan (Kamera &amp; Hardware)</span>
-                    </div>
-                    <div className="basic-feature-item disabled">
-                      <span className="basic-cross">❌</span>
-                      <span><strong>Tidak Bisa Scan AI</strong> (Harus tambah Add-on jika butuh)</span>
                     </div>
                     <div className="basic-feature-item disabled">
                       <span className="basic-cross">❌</span>
@@ -1355,21 +1355,19 @@ export default function Home() {
 
                 <button
                   type="button"
-                  className="basic-amber-btn"
+                  className="basic-green-btn"
                   onClick={() =>
                     handleOpenCheckout(
-                      'Paket Basic Lifetime ~ AsistenToko',
-                      'Rp 149.000 / sekali bayar seumur hidup (Banyak Device)',
-                      CHECKOUT_LINKS.basicLifetime,
-                      'Paket Basic Lifetime'
+                      activeBasicPlan.modalTitle,
+                      activeBasicPlan.modalPrice,
+                      activeBasicPlan.url,
+                      'Paket Basic (Single User)'
                     )
                   }
                 >
-                  Beli Paket Basic Lifetime (Rp 149.000)
+                  {activeBasicPlan.btnText}
                 </button>
               </div>
-            </div>
-          </div>
 
           {/* FREE TRIAL 1 HARI BANNER (Tetap Dipertahankan) */}
           <div className="trial-highlight-banner reveal">

@@ -11,64 +11,12 @@ const APP_URL = 'https://app.asistentoko.com'
 // Official Lynk.id Checkout Links
 const CHECKOUT_LINKS = {
   freeTrial: 'http://lynk.id/usahatokosembako/g7zr8vnlrv6e/checkout',
-  basicMonthly: 'http://lynk.id/usahatokosembako/379l8jz16m9q/checkout',
-  basic1Month: 'http://lynk.id/usahatokosembako/379l8jz16m9q/checkout',
-  basic3Months: 'http://lynk.id/usahatokosembako/drojg6o34jl8/checkout',
-  basic1Year: 'http://lynk.id/usahatokosembako/wr8j298g56m4/checkout',
   basicLifetime: 'http://lynk.id/usahatokosembako/w2d613qg61q9/checkout',
   business1Month: 'http://lynk.id/usahatokosembako/85v23g9p6v86/checkout',
   business3Months: 'http://lynk.id/usahatokosembako/g5w147m1jo8o/checkout',
   business1Year: 'http://lynk.id/usahatokosembako/erp1exgo0ozm/checkout',
   addonScanAi: 'http://lynk.id/usahatokosembako/4ov97x58kov3/checkout',
   addonUpgradeBusiness: 'http://lynk.id/usahatokosembako/o2dp4zkgll1y/checkout',
-}
-
-
-type BasicDuration = '1_bulan' | '3_bulan' | '1_tahun'
-
-const BASIC_PLANS: Record<
-  BasicDuration,
-  {
-    tabLabel: string
-    price: string
-    period: string
-    subnote: string
-    btnText: string
-    url: string
-    modalTitle: string
-    modalPrice: string
-  }
-> = {
-  '1_bulan': {
-    tabLabel: '1 Bulan',
-    price: 'Rp 99.000',
-    period: '/ bulan',
-    subnote: 'Paket langganan bulanan fleksibel',
-    btnText: 'Pilih Basic (1 Bulan) →',
-    url: CHECKOUT_LINKS.basic1Month,
-    modalTitle: 'Paket Basic 1 Bulan ~ AsistenToko',
-    modalPrice: 'Rp 99.000 / bulan (Single User - 1 Perangkat)',
-  },
-  '3_bulan': {
-    tabLabel: '3 Bulan',
-    price: 'Rp 219.000',
-    period: '/ 3 bulan',
-    subnote: 'Hemat Rp 78.000 (Setara Rp 73.000/bln)',
-    btnText: 'Pilih Basic (3 Bulan) →',
-    url: CHECKOUT_LINKS.basic3Months,
-    modalTitle: 'Paket Basic 3 Bulan ~ AsistenToko',
-    modalPrice: 'Rp 219.000 / 3 bulan (Hemat Rp 78.000)',
-  },
-  '1_tahun': {
-    tabLabel: '1 Tahun',
-    price: 'Rp 699.000',
-    period: '/ tahun',
-    subnote: 'Paling Hemat! Cuma ~Rp 58.250/bulan',
-    btnText: 'Pilih Basic (1 Tahun) →',
-    url: CHECKOUT_LINKS.basic1Year,
-    modalTitle: 'Paket Basic 1 Tahun ~ AsistenToko',
-    modalPrice: 'Rp 699.000 / tahun (Paling Hemat 🔥 ~Rp 58.250/bln)',
-  },
 }
 
 type BusinessDuration = '1_bulan' | '3_bulan' | '1_tahun'
@@ -1295,79 +1243,6 @@ export default function Home() {
 
                         {/* RIGHT COLUMN: PAKET BASIC BULANAN & PAKET BASIC LIFETIME */}
             <div className="pricing-right-col">
-              {/* Card 1: Paket Basic Bulanan */}
-              <div className="basic-tier-card">
-                <div>
-                  <div className="basic-card-top">
-                    <div className="card-top-content">
-                      <div className="card-title-row">
-                        <h3 className="basic-card-title">Paket Basic</h3>
-                        <div className="basic-badges-col">
-                          <span className="basic-pill-green">1 Device</span>
-                        </div>
-                      </div>
-                      <p className="basic-card-sub">
-                        Untuk toko mandiri yang dikelola sendiri oleh pemilik
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="biz-duration-tabs" role="tablist" aria-label="Pilih durasi Paket Basic">
-                    {(Object.keys(BASIC_PLANS) as BasicDuration[]).map((key) => (
-                      <button
-                        key={key}
-                        type="button"
-                        role="tab"
-                        aria-selected={basicDuration === key}
-                        className={`biz-tab-btn ${basicDuration === key ? 'active' : ''}`}
-                        onClick={() => setBasicDuration(key)}
-                      >
-                        <span className="biz-tab-label">{BASIC_PLANS[key].tabLabel}</span>
-                      </button>
-                    ))}
-                  </div>
-
-                  <div className="basic-price-row">
-                    <span className="basic-price-amount">{activeBasicPlan.price}</span>
-                    <span className="basic-price-period">{activeBasicPlan.period}</span>
-                  </div>
-                  <div className="biz-price-subnote">{activeBasicPlan.subnote}</div>
-
-                  <div className="basic-feature-list">
-                    <div className="basic-feature-item">
-                      <span className="basic-check">✓</span>
-                      <span><strong>Scan AI Kamera</strong> untuk barang tanpa barcode</span>
-                    </div>
-                    <div className="basic-feature-item">
-                      <span className="basic-check">✓</span>
-                      <span>Kasir Cepat, Buku Kasbon WA, Struk Bluetooth, &amp; CRM</span>
-                    </div>
-                    <div className="basic-feature-item disabled">
-                      <span className="basic-cross">❌</span>
-                      <span>Banyak Toko (Hanya 1 Cabang Toko)</span>
-                    </div>
-                    <div className="basic-feature-item disabled">
-                      <span className="basic-cross">❌</span>
-                      <span>Multi-User Kasir &amp; Sensor Modal HPP</span>
-                    </div>
-                  </div>
-                </div>
-
-                <button
-                  type="button"
-                  className="basic-green-btn"
-                  onClick={() =>
-                    handleOpenCheckout(
-                      activeBasicPlan.modalTitle,
-                      activeBasicPlan.modalPrice,
-                      activeBasicPlan.url,
-                      'Paket Basic (Single User)'
-                    )
-                  }
-                >
-                  {activeBasicPlan.btnText}
-                </button>
-              </div>
 
                             {/* Card 2: Paket Basic Lifetime */}
               <div className="basic-tier-card lifetime-variant">
@@ -1549,18 +1424,6 @@ export default function Home() {
               <div className="faq-body">
                 <p className="faq-ans">
                   Tidak perlu! Kamera HP yang Anda pegang sekarang sudah cukup untuk scan barcode kemasan maupun mengenali barang tanpa barcode (dengan fitur Scan AI). Namun jika Anda sudah punya alat scanner barcode USB/Bluetooth dan printer struk Bluetooth, AsistenToko juga langsung mendukungnya.
-                </p>
-              </div>
-            </div>
-
-            <div className="faq-item">
-              <button className="faq-btn">
-                <span className="faq-q">Apa bedanya Paket Basic, Basic Lifetime, dan Paket Business?</span>
-                <span className="faq-icon">+</span>
-              </button>
-              <div className="faq-body">
-                <p className="faq-ans">
-                  <strong>Paket Basic Bulanan (Rp 99.000)</strong> cocok untuk toko mandiri (limit 1 device) dan sudah termasuk Scan AI. <strong>Paket Basic Lifetime (Rp 149.000)</strong> beli putus selamanya dan kini sudah mendukung <strong>login Banyak Device</strong> (akses fleksibel dari Laptop, Tablet, &amp; HP sekaligus). Sedangkan <strong>Paket Business</strong> mendukung penuh <strong>Banyak Device + Banyak Toko</strong> (kelola lebih dari satu cabang toko dalam 1 akun), multi-user staf kasir, sensor rahasia modal (HPP), dan rekap shift kasir.
                 </p>
               </div>
             </div>

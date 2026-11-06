@@ -74,7 +74,6 @@ export default function Home() {
   const [isPdfModalOpen, setIsPdfModalOpen] = useState(false)
   const [selectedCheckout, setSelectedCheckout] = useState<CheckoutPlanInfo | null>(null)
   const [bizDuration, setBizDuration] = useState<BusinessDuration>('1_bulan')
-  const [basicDuration, setBasicDuration] = useState<BasicDuration>('1_bulan')
   const [isInHero, setIsInHero] = useState(true)
 
   // ===== Hero Background Video: Strict Mute, Seamless Loop & Viewport Performance =====
@@ -267,7 +266,6 @@ export default function Home() {
   }, [setupCursorGlow, setupNavbarScroll, setupReveal, setupFAQ, setupCounters, setupNavActive])
 
   const activeBizPlan = BUSINESS_PLANS[bizDuration]
-  const activeBasicPlan = BASIC_PLANS[basicDuration]
 
   return (
     <div ref={appRef}>

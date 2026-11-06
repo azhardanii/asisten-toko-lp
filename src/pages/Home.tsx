@@ -34,35 +34,35 @@ const BUSINESS_PLANS: Record<
     modalPrice: string
   }
 > = {
-  '1_bulan': {
+    '1_bulan': {
     tabLabel: '1 Bulan',
-    price: 'Rp 129.000',
+    price: 'Rp 99.000',
     period: '/ bulan',
     subnote: 'Standar bulanan fleksibel',
     btnText: 'Pilih Business (1 Bulan) →',
     url: CHECKOUT_LINKS.business1Month,
     modalTitle: 'Paket Business 1 Bulan ~ AsistenToko',
-    modalPrice: 'Rp 129.000 / bulan (Multi-User Lengkap)',
+    modalPrice: 'Rp 99.000 / bulan (Multi-User Lengkap)',
   },
   '3_bulan': {
     tabLabel: '3 Bulan',
-    price: 'Rp 299.000',
+    price: 'Rp 219.000',
     period: '/ 3 bulan',
-    subnote: 'Hemat Rp 88.000 (Setara Rp 99.600/bln)',
+    subnote: 'Hemat Rp 78.000 (Setara Rp 73.000/bln)',
     btnText: 'Pilih Business (3 Bulan) →',
     url: CHECKOUT_LINKS.business3Months,
     modalTitle: 'Paket Business 3 Bulan ~ AsistenToko',
-    modalPrice: 'Rp 299.000 / 3 bulan (Hemat Rp 88.000)',
+    modalPrice: 'Rp 219.000 / 3 bulan (Hemat Rp 78.000)',
   },
   '1_tahun': {
     tabLabel: '1 Tahun',
-    price: 'Rp 999.000',
+    price: 'Rp 799.000',
     period: '/ tahun',
-    subnote: 'Paling Hemat! Setara cuma ~Rp 83.250/bulan',
+    subnote: 'Paling Hemat! Setara cuma ~Rp 66.600/bulan',
     btnText: 'Pilih Business (1 Tahun) →',
     url: CHECKOUT_LINKS.business1Year,
     modalTitle: 'Paket Business 1 Tahun ~ AsistenToko',
-    modalPrice: 'Rp 999.000 / tahun (Best Value 🔥 Setara ~Rp 83.250/bln)',
+    modalPrice: 'Rp 799.000 / tahun (Best Value 🔥 Setara ~Rp 66.600/bln)',
   },
 }
 

@@ -1369,6 +1369,83 @@ export default function Home() {
                 </button>
               </div>
 
+                            {/* Card 2: Paket Basic Lifetime */}
+              <div className="basic-tier-card lifetime-variant">
+                <div>
+                  <div className="basic-card-top">
+                    <div className="card-top-content">
+                      <div className="card-title-row">
+                        <h3 className="basic-card-title">Paket Basic Lifetime</h3>
+                        <div className="basic-badges-col">
+                          <span className="basic-pill-amber">Banyak Device</span>
+                          <span className="basic-pill-amber" style={{ background: '#fef3c7' }}>
+                            Beli Putus
+                          </span>
+                        </div>
+                      </div>
+                      <p className="basic-card-sub">
+                        Sekali bayar untuk penggunaan selamanya tanpa biaya langganan berulang
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="basic-price-row">
+                    <span className="basic-price-amount amber">Rp 149.000</span>
+                    <span className="basic-price-period">/ sekali bayar</span>
+                  </div>
+
+                  <div className="basic-feature-list">
+                    <div className="basic-feature-item">
+                      <span className="basic-check amber">✓</span>
+                      <span>
+                        <strong>Akses Seumur Hidup</strong> (Sekali Bayar Selamanya / Tanpa Tagihan Bulanan)
+                      </span>
+                    </div>
+                    <div className="basic-feature-item">
+                      <span className="basic-check amber">✓</span>
+                      <span><strong>Login Banyak Device:</strong> Buka fleksibel dari Laptop, Tablet, &amp; HP</span>
+                    </div>
+                    <div className="basic-feature-item">
+                      <span className="basic-check amber">✓</span>
+                      <span>Kasir Cepat, Buku Kasbon WA, Struk Bluetooth, &amp; CRM</span>
+                    </div>
+                    <div className="basic-feature-item">
+                      <span className="basic-check amber">✓</span>
+                      <span>Scan Barcode Standar Kemasan (Kamera &amp; Hardware)</span>
+                    </div>
+                    <div className="basic-feature-item disabled">
+                      <span className="basic-cross">❌</span>
+                      <span><strong>Tidak Bisa Scan AI</strong> (Harus tambah Add-on jika butuh)</span>
+                    </div>
+                    <div className="basic-feature-item disabled">
+                      <span className="basic-cross">❌</span>
+                      <span>Banyak Toko (Hanya 1 Cabang Toko)</span>
+                    </div>
+                    <div className="basic-feature-item disabled">
+                      <span className="basic-cross">❌</span>
+                      <span>Multi-User Kasir &amp; Sensor Modal HPP</span>
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  className="basic-amber-btn"
+                  onClick={() =>
+                    handleOpenCheckout(
+                      'Paket Basic Lifetime ~ AsistenToko',
+                      'Rp 149.000 / sekali bayar seumur hidup (Banyak Device)',
+                      CHECKOUT_LINKS.basicLifetime,
+                      'Paket Basic Lifetime'
+                    )
+                  }
+                >
+                  Beli Paket Basic Lifetime (Rp 149.000)
+                </button>
+              </div>
+            </div>
+          </div>
+              
           {/* FREE TRIAL 1 HARI BANNER (Tetap Dipertahankan) */}
           <div className="trial-highlight-banner reveal">
             <div>

@@ -1101,7 +1101,7 @@ export default function Home() {
             <div className="basic-tier-card lifetime-variant">
               <div className="biz-top-floating-badge lifetime-badge">
                 <span>⭐</span>
-                <span>Paket Basic Lifetime (Beli Putus Sekali Bayar)</span>
+                <span>Paket Basic Lifetime (Beli Putus)</span>
               </div>
 
               <div className="basic-card-top">
@@ -1124,7 +1124,7 @@ export default function Home() {
               {/* Single static tab to balance visually with Business duration tabs */}
               <div className="lifetime-single-tab" role="presentation">
                 <span className="lifetime-tab-badge">⭐ Sekali Bayar</span>
-                <span className="lifetime-tab-text">Akses Seumur Hidup Tanpa Iuran Bulanan</span>
+                <span className="lifetime-tab-text">Akses Seumur Hidup Tanpa Iuran</span>
               </div>
 
               {/* Price Display */}
@@ -1142,6 +1142,7 @@ export default function Home() {
               <button
                 type="button"
                 className="basic-amber-btn"
+                style={{ marginBottom: '22px' }}
                 onClick={() =>
                   handleOpenCheckout(
                     'Paket Basic Lifetime ~ AsistenToko',

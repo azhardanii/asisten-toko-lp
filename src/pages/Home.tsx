@@ -24,53 +24,6 @@ const CHECKOUT_LINKS = {
 }
 
 
-type BasicDuration = '1_bulan' | '3_bulan' | '1_tahun'
-
-const BASIC_PLANS: Record<
-  BasicDuration,
-  {
-    tabLabel: string
-    price: string
-    period: string
-    subnote: string
-    btnText: string
-    url: string
-    modalTitle: string
-    modalPrice: string
-  }
-> = {
-  '1_bulan': {
-    tabLabel: '1 Bulan',
-    price: 'Rp 99.000',
-    period: '/ bulan',
-    subnote: 'Paket langganan bulanan fleksibel',
-    btnText: 'Pilih Basic (1 Bulan) →',
-    url: CHECKOUT_LINKS.basic1Month,
-    modalTitle: 'Paket Basic 1 Bulan ~ AsistenToko',
-    modalPrice: 'Rp 99.000 / bulan (Single User - 1 Perangkat)',
-  },
-  '3_bulan': {
-    tabLabel: '3 Bulan',
-    price: 'Rp 219.000',
-    period: '/ 3 bulan',
-    subnote: 'Hemat Rp 78.000 (Setara Rp 73.000/bln)',
-    btnText: 'Pilih Basic (3 Bulan) →',
-    url: CHECKOUT_LINKS.basic3Months,
-    modalTitle: 'Paket Basic 3 Bulan ~ AsistenToko',
-    modalPrice: 'Rp 219.000 / 3 bulan (Hemat Rp 78.000)',
-  },
-  '1_tahun': {
-    tabLabel: '1 Tahun',
-    price: 'Rp 699.000',
-    period: '/ tahun',
-    subnote: 'Paling Hemat! Cuma ~Rp 58.250/bulan',
-    btnText: 'Pilih Basic (1 Tahun) →',
-    url: CHECKOUT_LINKS.basic1Year,
-    modalTitle: 'Paket Basic 1 Tahun ~ AsistenToko',
-    modalPrice: 'Rp 699.000 / tahun (Paling Hemat 🔥 ~Rp 58.250/bln)',
-  },
-}
-
 type BusinessDuration = '1_bulan' | '3_bulan' | '1_tahun'
 
 const BUSINESS_PLANS: Record<
@@ -88,33 +41,33 @@ const BUSINESS_PLANS: Record<
 > = {
   '1_bulan': {
     tabLabel: '1 Bulan',
-    price: 'Rp 129.000',
+    price: 'Rp 99.000',
     period: '/ bulan',
     subnote: 'Standar bulanan fleksibel',
     btnText: 'Pilih Business (1 Bulan) →',
     url: CHECKOUT_LINKS.business1Month,
     modalTitle: 'Paket Business 1 Bulan ~ AsistenToko',
-    modalPrice: 'Rp 129.000 / bulan (Multi-User Lengkap)',
+    modalPrice: 'Rp 99.000 / bulan (Multi-User Lengkap)',
   },
   '3_bulan': {
     tabLabel: '3 Bulan',
-    price: 'Rp 299.000',
+    price: 'Rp 219.000',
     period: '/ 3 bulan',
-    subnote: 'Hemat Rp 88.000 (Setara Rp 99.600/bln)',
+    subnote: 'Hemat Rp 78.000 (Setara Rp 73.000/bln)',
     btnText: 'Pilih Business (3 Bulan) →',
     url: CHECKOUT_LINKS.business3Months,
     modalTitle: 'Paket Business 3 Bulan ~ AsistenToko',
-    modalPrice: 'Rp 299.000 / 3 bulan (Hemat Rp 88.000)',
+    modalPrice: 'Rp 219.000 / 3 bulan (Hemat Rp 78.000)',
   },
   '1_tahun': {
     tabLabel: '1 Tahun',
-    price: 'Rp 999.000',
+    price: 'Rp 799.000',
     period: '/ tahun',
-    subnote: 'Paling Hemat! Setara cuma ~Rp 83.250/bulan',
+    subnote: 'Paling Hemat! Setara cuma ~Rp 66.600/bulan (Hemat Rp 389.000)',
     btnText: 'Pilih Business (1 Tahun) →',
     url: CHECKOUT_LINKS.business1Year,
     modalTitle: 'Paket Business 1 Tahun ~ AsistenToko',
-    modalPrice: 'Rp 999.000 / tahun (Best Value 🔥 Setara ~Rp 83.250/bln)',
+    modalPrice: 'Rp 799.000 / tahun (Best Value 🔥 Setara ~Rp 66.600/bln)',
   },
 }
 
@@ -126,7 +79,6 @@ export default function Home() {
   const [isPdfModalOpen, setIsPdfModalOpen] = useState(false)
   const [selectedCheckout, setSelectedCheckout] = useState<CheckoutPlanInfo | null>(null)
   const [bizDuration, setBizDuration] = useState<BusinessDuration>('1_bulan')
-  const [basicDuration, setBasicDuration] = useState<BasicDuration>('1_bulan')
   const [isInHero, setIsInHero] = useState(true)
 
   // ===== Hero Background Video: Strict Mute, Seamless Loop & Viewport Performance =====
@@ -319,7 +271,6 @@ export default function Home() {
   }, [setupCursorGlow, setupNavbarScroll, setupReveal, setupFAQ, setupCounters, setupNavActive])
 
   const activeBizPlan = BUSINESS_PLANS[bizDuration]
-  const activeBasicPlan = BASIC_PLANS[basicDuration]
 
   return (
     <div ref={appRef}>
@@ -1139,199 +1090,108 @@ export default function Home() {
               <br />
               <span style={{ color: 'var(--green)' }}>Rapi, Aman, dan Menguntungkan</span>
             </h2>
-            <p className="section-sub" style={{ maxWidth: '620px' }}>
-              Pilih paket sesuai skala toko Anda. Semua paket langsung aktif otomatis setelah pembayaran menggunakan{' '}
-              <strong>email Gmail Anda</strong>.
+            <p className="section-sub" style={{ maxWidth: '640px' }}>
+              Pilih paket sesuai skala toko Anda: <strong>Paket Basic Lifetime</strong> untuk beli putus seumur hidup atau <strong>Paket Business</strong> untuk operasional multi-user &amp; banyak toko terlengkap.
             </p>
           </div>
 
-          {/* Main 2-Column Layout: Paket Basic Lifetime & Bulanan (Left) + Paket Business (Right) */}
+          {/* Main 2-Column Layout: Paket Basic Lifetime (Left) + Paket Business (Right) */}
           <div className="pricing-v2-layout reveal">
-            {/* LEFT COLUMN: PAKET BASIC LIFETIME & PAKET BASIC BULANAN */}
-            <div className="basic-cards-stack">
-              {/* Card 1: Paket Basic Lifetime */}
-              <div className="basic-tier-card lifetime-variant">
-                <div>
-                  <div className="basic-card-top">
-                    <div className="card-top-content">
-                      <div className="card-title-row">
-                        <h3 className="basic-card-title">Paket Basic Lifetime</h3>
-                        <div className="basic-badges-col">
-                          <span className="basic-pill-amber">Banyak Device</span>
-                          <span className="basic-pill-amber" style={{ background: '#fef3c7' }}>
-                            Beli Putus
-                          </span>
-                        </div>
-                      </div>
-                      <p className="basic-card-sub">
-                        Sekali bayar untuk penggunaan selamanya tanpa biaya langganan berulang
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="basic-price-row">
-                    <span className="basic-price-amount amber">Rp 149.000</span>
-                    <span className="basic-price-period">/ sekali bayar</span>
-                  </div>
-
-                  <div className="basic-feature-list">
-                    <div className="basic-feature-item">
-                      <span className="basic-check amber">✓</span>
-                      <span>
-                        <strong>Akses Seumur Hidup</strong> (Sekali Bayar Selamanya / Tanpa Tagihan Bulanan)
-                      </span>
-                    </div>
-                    <div className="basic-feature-item">
-                      <span className="basic-check amber">✓</span>
-                      <span><strong>Login Banyak Device:</strong> Buka fleksibel dari Laptop, Tablet, &amp; HP</span>
-                    </div>
-                    <div className="basic-feature-item">
-                      <span className="basic-check amber">✓</span>
-                      <span>Kasir Cepat, Buku Kasbon WA, Struk Bluetooth, &amp; CRM</span>
-                    </div>
-                    <div className="basic-feature-item">
-                      <span className="basic-check amber">✓</span>
-                      <span>Scan Barcode Standar Kemasan (Kamera &amp; Hardware)</span>
-                    </div>
-                    <div className="basic-feature-item disabled">
-                      <span className="basic-cross">❌</span>
-                      <span><strong>Tidak Bisa Scan AI</strong> (Harus tambah Add-on jika butuh)</span>
-                    </div>
-                    <div className="basic-feature-item disabled">
-                      <span className="basic-cross">❌</span>
-                      <span>Banyak Toko (Hanya 1 Cabang Toko)</span>
-                    </div>
-                    <div className="basic-feature-item disabled">
-                      <span className="basic-cross">❌</span>
-                      <span>Multi-User Kasir &amp; Sensor Modal HPP</span>
-                    </div>
-                  </div>
-                </div>
-
-                <button
-                  type="button"
-                  className="basic-amber-btn"
-                  onClick={() =>
-                    handleOpenCheckout(
-                      'Paket Basic Lifetime ~ AsistenToko',
-                      'Rp 149.000 / sekali bayar seumur hidup (Banyak Device)',
-                      CHECKOUT_LINKS.basicLifetime,
-                      'Paket Basic Lifetime'
-                    )
-                  }
-                >
-                  Beli Paket Basic Lifetime (Rp 149.000)
-                </button>
+            {/* LEFT COLUMN / TOP ON MOBILE: PAKET BASIC LIFETIME */}
+            <div className="basic-tier-card lifetime-variant">
+              <div className="biz-top-floating-badge lifetime-badge">
+                <span>⭐</span>
+                <span>Paket Basic Lifetime (Beli Putus Sekali Bayar)</span>
               </div>
 
-              {/* Card 2: Paket Basic (Berlangganan) */}
-              <div className="basic-tier-card">
-                <div>
-                  <div className="basic-card-top">
-                    <div className="card-top-content">
-                      <div className="card-title-row">
-                        <h3 className="basic-card-title">Paket Basic</h3>
-                        <span className="basic-pill-gray">Single User (1 Device)</span>
-                      </div>
-                      <p className="basic-card-sub">
-                        Cocok untuk toko mandiri yang dikelola langsung oleh owner sendiri
-                      </p>
+              <div className="basic-card-top">
+                <div className="card-top-content">
+                  <div className="card-title-row">
+                    <h3 className="basic-card-title">Paket Basic Lifetime</h3>
+                    <div className="basic-badges-col">
+                      <span className="basic-pill-amber">Banyak Device</span>
+                      <span className="basic-pill-amber" style={{ background: '#fef3c7' }}>
+                        Beli Putus
+                      </span>
                     </div>
                   </div>
-
-                  {/* 3-Tab Duration Switcher for Basic (1 Bulan | 3 Bulan | 1 Tahun) */}
-                  <div className="biz-duration-tabs basic-tabs" role="tablist" aria-label="Pilih durasi Paket Basic">
-                    <button
-                      type="button"
-                      role="tab"
-                      aria-selected={basicDuration === '1_bulan'}
-                      className={`biz-tab-btn ${basicDuration === '1_bulan' ? 'active' : ''}`}
-                      onClick={() => setBasicDuration('1_bulan')}
-                    >
-                      <span className="biz-tab-label">1 Bulan</span>
-                    </button>
-
-                    <button
-                      type="button"
-                      role="tab"
-                      aria-selected={basicDuration === '3_bulan'}
-                      className={`biz-tab-btn ${basicDuration === '3_bulan' ? 'active' : ''}`}
-                      onClick={() => setBasicDuration('3_bulan')}
-                    >
-                      <span className="biz-tab-mini-badge hemat">Hemat</span>
-                      <span className="biz-tab-label">3 Bulan</span>
-                    </button>
-
-                    <button
-                      type="button"
-                      role="tab"
-                      aria-selected={basicDuration === '1_tahun'}
-                      className={`biz-tab-btn ${basicDuration === '1_tahun' ? 'active' : ''}`}
-                      onClick={() => setBasicDuration('1_tahun')}
-                    >
-                      <span className="biz-tab-mini-badge best">Best Value 🔥</span>
-                      <span className="biz-tab-label">1 Tahun</span>
-                    </button>
-                  </div>
-
-                  <div className="biz-price-block">
-                    <div className="basic-price-row">
-                      <span className="basic-price-amount">{activeBasicPlan.price}</span>
-                      <span className="basic-price-period">{activeBasicPlan.period}</span>
-                    </div>
-                    <div className="biz-price-subnote">{activeBasicPlan.subnote}</div>
-                  </div>
-
-                  <div className="basic-feature-list">
-                    <div className="basic-feature-item">
-                      <span className="basic-check">✓</span>
-                      <span>1 Akun Pengguna (Single User)</span>
-                    </div>
-                    <div className="basic-feature-item">
-                      <span className="basic-check">✓</span>
-                      <span>AI Vision Scan Terintegrasi (Scan tanpa barcode)</span>
-                    </div>
-                    <div className="basic-feature-item">
-                      <span className="basic-check">✓</span>
-                      <span>Kasir Cepat, Buku Kasbon WA, &amp; Struk Bluetooth</span>
-                    </div>
-                    <div className="basic-feature-item">
-                      <span className="basic-check">✓</span>
-                      <span>Katalog Produk, Varian Satuan, &amp; CRM Pelanggan</span>
-                    </div>
-                    <div className="basic-feature-item disabled">
-                      <span className="basic-cross">❌</span>
-                      <span>Banyak Device (Hanya 1 Perangkat Aktif)</span>
-                    </div>
-                    <div className="basic-feature-item disabled">
-                      <span className="basic-cross">❌</span>
-                      <span>Banyak Toko (Hanya 1 Cabang Toko)</span>
-                    </div>
-                    <div className="basic-feature-item disabled">
-                      <span className="basic-cross">❌</span>
-                      <span>Multi-User Kasir &amp; Sensor Modal HPP</span>
-                    </div>
-                  </div>
+                  <p className="basic-card-sub">
+                    Sekali bayar untuk penggunaan selamanya tanpa biaya langganan berulang
+                  </p>
                 </div>
+              </div>
 
-                <button
-                  type="button"
-                  className="basic-outline-btn"
-                  onClick={() =>
-                    handleOpenCheckout(
-                      activeBasicPlan.modalTitle,
-                      activeBasicPlan.modalPrice,
-                      activeBasicPlan.url,
-                      'Paket Basic'
-                    )
-                  }
-                >
-                  {activeBasicPlan.btnText}
-                </button>
+              {/* Single static tab to balance visually with Business duration tabs */}
+              <div className="lifetime-single-tab" role="presentation">
+                <span className="lifetime-tab-badge">⭐ Sekali Bayar</span>
+                <span className="lifetime-tab-text">Akses Seumur Hidup Tanpa Iuran Bulanan</span>
+              </div>
+
+              {/* Price Display */}
+              <div className="biz-price-block">
+                <div className="basic-price-row">
+                  <span className="basic-price-amount amber">Rp 149.000</span>
+                  <span className="basic-price-period">/ sekali bayar</span>
+                </div>
+                <div className="biz-price-subnote" style={{ color: '#b45309' }}>
+                  Sekali bayar aktif selamanya untuk banyak perangkat
+                </div>
+              </div>
+
+              {/* CTA Button (Triggers Gmail Popup) */}
+              <button
+                type="button"
+                className="basic-amber-btn"
+                onClick={() =>
+                  handleOpenCheckout(
+                    'Paket Basic Lifetime ~ AsistenToko',
+                    'Rp 149.000 / sekali bayar seumur hidup (Banyak Device)',
+                    CHECKOUT_LINKS.basicLifetime,
+                    'Paket Basic Lifetime'
+                  )
+                }
+              >
+                Beli Paket Basic Lifetime (Rp 149.000)
+              </button>
+
+              <div className="biz-divider"></div>
+
+              {/* Features List with comparisons */}
+              <div className="basic-feature-list">
+                <div className="basic-feature-item">
+                  <span className="basic-check amber">✓</span>
+                  <span>
+                    <strong>Akses Seumur Hidup:</strong> Sekali bayar aktif selamanya tanpa tagihan bulanan
+                  </span>
+                </div>
+                <div className="basic-feature-item">
+                  <span className="basic-check amber">✓</span>
+                  <span><strong>Login Banyak Device:</strong> Buka fleksibel dari Laptop, Tablet, &amp; HP</span>
+                </div>
+                <div className="basic-feature-item">
+                  <span className="basic-check amber">✓</span>
+                  <span>Kasir Cepat, Buku Kasbon WA, Struk Bluetooth, &amp; CRM</span>
+                </div>
+                <div className="basic-feature-item">
+                  <span className="basic-check amber">✓</span>
+                  <span>Scan Barcode Standar Kemasan (Kamera &amp; Hardware)</span>
+                </div>
+                <div className="basic-feature-item disabled">
+                  <span className="basic-cross">❌</span>
+                  <span><strong>Tidak Bisa Scan AI</strong> (Harus tambah Add-on jika butuh)</span>
+                </div>
+                <div className="basic-feature-item disabled">
+                  <span className="basic-cross">❌</span>
+                  <span>Banyak Toko (Hanya 1 Cabang Toko)</span>
+                </div>
+                <div className="basic-feature-item disabled">
+                  <span className="basic-cross">❌</span>
+                  <span>Multi-User Kasir &amp; Sensor Modal HPP</span>
+                </div>
               </div>
             </div>
 
-            {/* RIGHT COLUMN: PAKET BUSINESS (Matches Images 1, 2, 3) */}
+            {/* RIGHT COLUMN / BOTTOM ON MOBILE: PAKET BUSINESS */}
             <div className="biz-pricing-card">
               <div className="biz-top-floating-badge">
                 <span>✨</span>
@@ -1587,12 +1447,12 @@ export default function Home() {
 
             <div className="faq-item">
               <button className="faq-btn">
-                <span className="faq-q">Apa bedanya Paket Basic, Basic Lifetime, dan Paket Business?</span>
+                <span className="faq-q">Apa bedanya Paket Basic Lifetime dan Paket Business?</span>
                 <span className="faq-icon">+</span>
               </button>
               <div className="faq-body">
                 <p className="faq-ans">
-                  <strong>Paket Basic Bulanan (Rp 99.000)</strong> cocok untuk toko mandiri (limit 1 device) dan sudah termasuk Scan AI. <strong>Paket Basic Lifetime (Rp 149.000)</strong> beli putus selamanya dan kini sudah mendukung <strong>login Banyak Device</strong> (akses fleksibel dari Laptop, Tablet, &amp; HP sekaligus). Sedangkan <strong>Paket Business</strong> mendukung penuh <strong>Banyak Device + Banyak Toko</strong> (kelola lebih dari satu cabang toko dalam 1 akun), multi-user staf kasir, sensor rahasia modal (HPP), dan rekap shift kasir.
+                  <strong>Paket Basic Lifetime (Rp 149.000)</strong> adalah paket beli putus sekali bayar seumur hidup tanpa tagihan bulanan berulang, sudah mendukung login <strong>Banyak Device</strong> (Laptop, Tablet, HP), kasir cepat, struk bluetooth, dan buku kasbon. Sedangkan <strong>Paket Business (mulai Rp 99.000/bulan)</strong> adalah solusi terlengkap untuk toko berkembang yang mengelola <strong>Banyak Cabang Toko</strong> dalam 1 akun, butuh fitur staf kasir &amp; staf gudang terpisah dengan PIN masing-masing, proteksi rahasia modal (HPP) &amp; laba bersih dari kasir, rekap shift kasir, dan AI Vision Scan tanpa batas.
                 </p>
               </div>
             </div>

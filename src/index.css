@@ -3281,7 +3281,7 @@
 
 .pricing-v2-layout {
   display: grid;
-  grid-template-columns: 1.08fr 0.92fr;
+  grid-template-columns: 1fr 1fr;
   gap: 28px;
   align-items: stretch;
   max-width: 1140px;

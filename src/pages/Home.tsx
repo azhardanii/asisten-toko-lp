@@ -1095,7 +1095,7 @@ export default function Home() {
           <div className="pricing-v2-layout reveal">
             {/* LEFT COLUMN: PAKET BASIC LIFETIME & PAKET BASIC BULANAN */}
             <div className="basic-cards-stack">
-              {/* Card 2: Paket Basic Lifetime */}
+              {/* Card 1: Paket Basic Lifetime */}
               <div className="basic-tier-card lifetime-variant">
                 <div>
                   <div className="basic-card-top">
@@ -1170,7 +1170,7 @@ export default function Home() {
                 </button>
               </div>
 
-              {/* Card 1: Paket Basic (Berlangganan) */}
+              {/* Card 2: Paket Basic (Berlangganan) */}
               <div className="basic-tier-card">
                 <div>
                   <div className="basic-card-top">

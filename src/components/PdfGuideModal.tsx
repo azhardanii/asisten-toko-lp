@@ -5,7 +5,7 @@ interface PdfGuideModalProps {
   onClose: () => void
 }
 
-export const PDF_GUIDE_URL = '/Panduan%20AsistenToko%20.pdf'
+export const PDF_GUIDE_URL = 'https://app.asistentoko.com/asistentoko-panduan-penggunaan.pdf'
 export const PDF_FILE_NAME = 'Panduan AsistenToko.pdf'
 
 export default function PdfGuideModal({ isOpen, onClose }: PdfGuideModalProps) {

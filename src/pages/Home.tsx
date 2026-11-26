@@ -7,6 +7,7 @@ import ConversionBoosters from '../components/ConversionBoosters'
 import '../index.css'
 
 const APP_URL = 'https://app.asistentoko.com'
+const VIDEO_TUTORIAL_URL = 'https://drive.google.com/drive/folders/1Kgy4szWat_3jQNjFzvU4GHypxtm4VdM4?usp=share_link'
 
 // Official Lynk.id Checkout Links
 const CHECKOUT_LINKS = {
@@ -316,6 +317,15 @@ export default function Home() {
             >
               📖 Panduan
             </button>
+            <a
+              href={VIDEO_TUTORIAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-link"
+              title="Tonton Video Tutorial Lengkap AsistenToko"
+            >
+              🎬 Video Panduan
+            </a>
           </div>
           <div className="nav-actions">
             <button
@@ -534,6 +544,36 @@ export default function Home() {
               Download Aplikasi (Android APK)
             </a>
           </div>
+        </div>
+
+        <div className="container">
+          <a
+            href={VIDEO_TUTORIAL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-video-guide-banner"
+          >
+            <div className="hero-video-guide-thumb">
+              <img
+                src="/tutorial-visual-banner.jpeg"
+                alt="Video Tutorial Cara Menggunakan AsistenToko"
+                width={1600}
+                height={900}
+              />
+            </div>
+            <div className="hero-video-guide-copy">
+              <span className="guide-badge-pill">🎬 VIDEO TUTORIAL RESMI</span>
+              <div className="hero-video-guide-title">
+                Tonton Video Panduan Lengkap AsistenToko
+              </div>
+              <div className="hero-video-guide-sub">
+                Baru pertama pakai? Tonton panduan langkah demi langkah agar langsung paham dalam hitungan menit.
+              </div>
+            </div>
+            <span className="btn-primary hero-video-guide-cta">
+              ▶ Tonton Video Panduan
+            </span>
+          </a>
         </div>
       </div>
 
@@ -794,7 +834,7 @@ export default function Home() {
       </section>
 
       {/* ===== VIDEO TUTORIAL ===== */}
-      <section className="video-section" style={{ padding: '60px 0' }}>
+      <section className="video-section" id="video-tutorial" style={{ padding: '60px 0' }}>
         <div className="container-sm">
           <div className="section-head reveal">
             <div className="section-label">🎥 Lihat Aksinya Langsung</div>
@@ -871,6 +911,34 @@ export default function Home() {
               ></video>
             )}
           </div>
+
+          <a
+            href={VIDEO_TUTORIAL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-video-guide-banner video-folder-cta-card reveal"
+          >
+            <div className="hero-video-guide-thumb">
+              <img
+                src="/tutorial-visual-banner.jpeg"
+                alt="Video Tutorial Cara Menggunakan AsistenToko"
+                width={1600}
+                height={900}
+              />
+            </div>
+            <div className="hero-video-guide-copy">
+              <span className="guide-badge-pill">🎬 FOLDER VIDEO LENGKAP</span>
+              <div className="hero-video-guide-title">
+                Lihat Semua Video Panduan Lengkap
+              </div>
+              <div className="hero-video-guide-sub">
+                Akses semua video tutorial cara pakai fitur kasir, scan AI, stok, hingga laporan toko.
+              </div>
+            </div>
+            <span className="btn-primary hero-video-guide-cta">
+              Lihat Semua →
+            </span>
+          </a>
         </div>
       </section>
 

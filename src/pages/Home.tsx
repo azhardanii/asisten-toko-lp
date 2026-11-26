@@ -76,7 +76,6 @@ export default function Home() {
   const appRef = useRef<HTMLDivElement>(null)
   const heroSectionRef = useRef<HTMLElement>(null)
   const heroVideoRef = useRef<HTMLVideoElement>(null)
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
   const [isPdfModalOpen, setIsPdfModalOpen] = useState(false)
   const [selectedCheckout, setSelectedCheckout] = useState<CheckoutPlanInfo | null>(null)
   const [bizDuration, setBizDuration] = useState<BusinessDuration>('1_bulan')
@@ -317,15 +316,6 @@ export default function Home() {
             >
               📖 Panduan
             </button>
-            <a
-              href={VIDEO_TUTORIAL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="nav-link"
-              title="Tonton Video Tutorial Lengkap AsistenToko"
-            >
-              🎬 Video Panduan
-            </a>
           </div>
           <div className="nav-actions">
             <button
@@ -544,36 +534,6 @@ export default function Home() {
               Download Aplikasi (Android APK)
             </a>
           </div>
-        </div>
-
-        <div className="container">
-          <a
-            href={VIDEO_TUTORIAL_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hero-video-guide-banner"
-          >
-            <div className="hero-video-guide-thumb">
-              <img
-                src="/tutorial-visual-banner.jpeg"
-                alt="Video Tutorial Cara Menggunakan AsistenToko"
-                width={1600}
-                height={900}
-              />
-            </div>
-            <div className="hero-video-guide-copy">
-              <span className="guide-badge-pill">🎬 VIDEO TUTORIAL RESMI</span>
-              <div className="hero-video-guide-title">
-                Tonton Video Panduan Lengkap AsistenToko
-              </div>
-              <div className="hero-video-guide-sub">
-                Baru pertama pakai? Tonton panduan langkah demi langkah agar langsung paham dalam hitungan menit.
-              </div>
-            </div>
-            <span className="btn-primary hero-video-guide-cta">
-              ▶ Tonton Video Panduan
-            </span>
-          </a>
         </div>
       </div>
 
@@ -847,97 +807,20 @@ export default function Home() {
               Tonton video singkat bagaimana cepatnya melayani pembeli dan mencatat barang di AsistenToko.
             </p>
           </div>
-          <div
-            className="video-container reveal"
-            style={{
-              position: 'relative',
-              borderRadius: '24px',
-              overflow: 'hidden',
-              boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
-              aspectRatio: '9/16',
-              background: '#000',
-              cursor: 'pointer',
-              maxWidth: '360px',
-              margin: '0 auto',
-            }}
-            onClick={() => setIsVideoPlaying(true)}
-          >
-            {!isVideoPlaying ? (
-              <div style={{ width: '100%', height: '100%', position: 'relative' }} className="thumbnail-wrapper">
-                <img
-                  src="/tutor_thumbnail.webp"
-                  alt="Thumbnail Tutorial AsistenToko"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                />
-                <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(0,0,0,0.5)' }}></div>
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    width: '84px',
-                    height: '84px',
-                    background: 'var(--green)',
-                    borderRadius: '50%',
-                    border: '4px solid white',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    boxShadow: '0 0 40px rgba(22, 163, 74, 0.9), 0 8px 32px rgba(0, 0, 0, 0.5)',
-                    transition: 'transform 0.2s ease-in-out',
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1.1)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1)')}
-                >
-                  <svg
-                    width="60"
-                    height="60"
-                    viewBox="0 0 24 24"
-                    fill="white"
-                    xmlns="http://www.w3.org/2000/svg"
-                    style={{ marginLeft: '8px' }}
-                  >
-                    <path d="M7 6v12l11-6z" />
-                  </svg>
-                </div>
-              </div>
-            ) : (
-              <video
-                src="/tutor_asistentoko.mp4"
-                controls
-                autoPlay
-                style={{ width: '100%', height: '100%', objectFit: 'contain', outline: 'none' }}
-              ></video>
-            )}
-          </div>
-
           <a
             href={VIDEO_TUTORIAL_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hero-video-guide-banner video-folder-cta-card reveal"
+            className="video-container video-banner-link reveal"
+            title="Tonton Video Panduan AsistenToko di Google Drive"
           >
-            <div className="hero-video-guide-thumb">
-              <img
-                src="/tutorial-visual-banner.jpeg"
-                alt="Video Tutorial Cara Menggunakan AsistenToko"
-                width={1600}
-                height={900}
-              />
-            </div>
-            <div className="hero-video-guide-copy">
-              <span className="guide-badge-pill">🎬 FOLDER VIDEO LENGKAP</span>
-              <div className="hero-video-guide-title">
-                Lihat Semua Video Panduan Lengkap
-              </div>
-              <div className="hero-video-guide-sub">
-                Akses semua video tutorial cara pakai fitur kasir, scan AI, stok, hingga laporan toko.
-              </div>
-            </div>
-            <span className="btn-primary hero-video-guide-cta">
-              Lihat Semua →
-            </span>
+            <img
+              src="/tutorial-visual-banner.jpeg"
+              alt="Video Tutorial Cara Menggunakan AsistenToko"
+              width={1600}
+              height={900}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            />
           </a>
         </div>
       </section>

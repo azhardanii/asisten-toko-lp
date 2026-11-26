@@ -5437,103 +5437,22 @@
   }
 }
 
-/* --- VIDEO TUTORIAL VISUAL BANNER (QUICK BAR & SECTION CTA) --- */
-.hero-video-guide-banner {
-  margin-top: 14px;
-  display: flex;
-  align-items: stretch;
-  gap: 0;
-  padding: 0;
-  overflow: hidden;
-  background: #ffffff;
-  border: 1.5px solid rgba(22, 163, 74, 0.28);
-  border-radius: 18px;
-  text-decoration: none;
-  color: inherit;
-  box-shadow: 0 6px 20px rgba(15, 81, 50, 0.06);
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.hero-video-guide-banner:hover {
-  transform: translateY(-2px);
-  border-color: var(--green);
-  box-shadow: 0 10px 28px rgba(15, 124, 68, 0.14);
-}
-
-.hero-video-guide-thumb {
-  width: 240px;
-  aspect-ratio: 16 / 9;
-  border-radius: 0;
-  overflow: hidden;
-  flex-shrink: 0;
-  background: #062615;
-}
-
-.hero-video-guide-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* --- VIDEO TUTORIAL BANNER LINK --- */
+.video-banner-link {
   display: block;
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  aspect-ratio: 16 / 9;
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+  background: #062615;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.hero-video-guide-copy {
-  flex: 1;
-  min-width: 0;
-  padding: 14px 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 4px;
-}
-
-.hero-video-guide-title {
-  font-size: 16px;
-  font-weight: 800;
-  color: #0f172a;
-  line-height: 1.3;
-}
-
-.hero-video-guide-sub {
-  font-size: 13px;
-  color: #475569;
-  line-height: 1.45;
-}
-
-.hero-video-guide-cta {
-  padding: 11px 20px !important;
-  font-size: 13.5px !important;
-  white-space: nowrap;
-  flex-shrink: 0;
-  margin-right: 18px;
-  align-self: center;
-}
-
-.video-folder-cta-card {
-  max-width: 680px;
-  margin: 28px auto 0;
-}
-
-@media (max-width: 768px) {
-  .hero-video-guide-banner {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0;
-    gap: 0;
-  }
-
-  .hero-video-guide-thumb {
-    width: 100%;
-  }
-
-  .hero-video-guide-copy {
-    padding: 14px 16px 8px;
-  }
-
-  .hero-video-guide-cta {
-    width: calc(100% - 32px);
-    margin: 6px 16px 14px;
-    justify-content: center;
-    text-align: center;
-  }
+.video-banner-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 48px rgba(15, 124, 68, 0.2);
 }

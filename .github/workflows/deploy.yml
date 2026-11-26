@@ -1,0 +1,29 @@
+name: Deploy to Coolify
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  trigger-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Coolify Webhook
+        env:
+          WEBHOOK_URL: ${{ secrets.COOLIFY_WEBHOOK_URL }}
+          API_TOKEN: ${{ secrets.COOLIFY_API_TOKEN }}
+        if: ${{ env.WEBHOOK_URL != '' && env.API_TOKEN != '' }}
+        run: |
+          curl --fail-with-body --silent --show-error --location --request GET "$WEBHOOK_URL" \
+            --header "Authorization: Bearer $API_TOKEN"
+
+      - name: Remind to set Webhook and API Token Secrets
+        env:
+          WEBHOOK_URL: ${{ secrets.COOLIFY_WEBHOOK_URL }}
+          API_TOKEN: ${{ secrets.COOLIFY_API_TOKEN }}
+        if: ${{ env.WEBHOOK_URL == '' || env.API_TOKEN == '' }}
+        run: |
+          echo "⚠️ COOLIFY_WEBHOOK_URL atau COOLIFY_API_TOKEN belum diset di GitHub Secrets repo ini."
+          exit 1

@@ -51,23 +51,23 @@ const BUSINESS_PLANS: Record<
   },
   '3_bulan': {
     tabLabel: '3 Bulan',
-    price: 'Rp 219.000',
+    price: 'Rp 249.000',
     period: '/ 3 bulan',
-    subnote: 'Hemat Rp 78.000 (Setara Rp 73.000/bln)',
+    subnote: 'Hemat Rp 48.000 (Setara Rp 83.000/bln)',
     btnText: 'Pilih Business (3 Bulan) →',
     url: CHECKOUT_LINKS.business3Months,
     modalTitle: 'Paket Business 3 Bulan ~ AsistenToko',
-    modalPrice: 'Rp 219.000 / 3 bulan (Hemat Rp 78.000)',
+    modalPrice: 'Rp 249.000 / 3 bulan (Hemat Rp 48.000)',
   },
   '1_tahun': {
     tabLabel: '1 Tahun',
-    price: 'Rp 799.000',
+    price: 'Rp 899.000',
     period: '/ tahun',
-    subnote: 'Paling Hemat! Setara cuma ~Rp 66.600/bulan (Hemat Rp 389.000)',
+    subnote: 'Paling Hemat! Setara cuma ~Rp 74.900/bulan (Hemat Rp 289.000)',
     btnText: 'Pilih Business (1 Tahun) →',
     url: CHECKOUT_LINKS.business1Year,
     modalTitle: 'Paket Business 1 Tahun ~ AsistenToko',
-    modalPrice: 'Rp 799.000 / tahun (Best Value 🔥 Setara ~Rp 66.600/bln)',
+    modalPrice: 'Rp 899.000 / tahun (Best Value 🔥 Setara ~Rp 74.900/bln)',
   },
 }
 
@@ -563,6 +563,87 @@ export default function Home() {
         </div>
       </div>
 
+      {/* ===== VIDEO TUTORIAL ===== */}
+      <section className="video-section" style={{ padding: '60px 0' }}>
+        <div className="container-sm">
+          <div className="section-head reveal">
+            <div className="section-label">🎥 Lihat Aksinya Langsung</div>
+            <h2 className="section-title">
+              Semudah Ini Memakai
+              <br />
+              <span style={{ color: 'var(--green)' }}>AsistenToko Sehari-hari</span>
+            </h2>
+            <p className="section-sub">
+              Tonton video singkat bagaimana cepatnya melayani pembeli dan mencatat barang di AsistenToko.
+            </p>
+          </div>
+          <div
+            className="video-container reveal"
+            style={{
+              position: 'relative',
+              borderRadius: '24px',
+              overflow: 'hidden',
+              boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+              aspectRatio: '9/16',
+              background: '#000',
+              cursor: 'pointer',
+              maxWidth: '360px',
+              margin: '0 auto',
+            }}
+            onClick={() => setIsVideoPlaying(true)}
+          >
+            {!isVideoPlaying ? (
+              <div style={{ width: '100%', height: '100%', position: 'relative' }} className="thumbnail-wrapper">
+                <img
+                  src="/tutor_thumbnail.webp"
+                  alt="Thumbnail Tutorial AsistenToko"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+                <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(0,0,0,0.5)' }}></div>
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    width: '84px',
+                    height: '84px',
+                    background: 'var(--green)',
+                    borderRadius: '50%',
+                    border: '4px solid white',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: '0 0 40px rgba(22, 163, 74, 0.9), 0 8px 32px rgba(0, 0, 0, 0.5)',
+                    transition: 'transform 0.2s ease-in-out',
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1.1)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1)')}
+                >
+                  <svg
+                    width="60"
+                    height="60"
+                    viewBox="0 0 24 24"
+                    fill="white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{ marginLeft: '8px' }}
+                  >
+                    <path d="M7 6v12l11-6z" />
+                  </svg>
+                </div>
+              </div>
+            ) : (
+              <video
+                src="/tutor_asistentoko.mp4"
+                controls
+                autoPlay
+                style={{ width: '100%', height: '100%', objectFit: 'contain', outline: 'none' }}
+              ></video>
+            )}
+          </div>
+        </div>
+      </section>
+
       {/* ===== INTERACTIVE FEATURE HUB (EXACT IMAGE-5 UI) ===== */}
       <InteractiveFeatureHub onOpenCheckout={handleOpenCheckout} />
 
@@ -789,87 +870,6 @@ export default function Home() {
                 Pantau omset &amp; laba bersih (bisa pilih tanggal suka-suka), sembunyikan saldo dengan <strong>Ikon Mata</strong>, upload ratusan produk lewat <strong>Excel</strong>, dan cetak stiker barcode sendiri!
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== VIDEO TUTORIAL ===== */}
-      <section className="video-section" style={{ padding: '60px 0' }}>
-        <div className="container-sm">
-          <div className="section-head reveal">
-            <div className="section-label">🎥 Lihat Aksinya Langsung</div>
-            <h2 className="section-title">
-              Semudah Ini Memakai
-              <br />
-              <span style={{ color: 'var(--green)' }}>AsistenToko Sehari-hari</span>
-            </h2>
-            <p className="section-sub">
-              Tonton video singkat bagaimana cepatnya melayani pembeli dan mencatat barang di AsistenToko.
-            </p>
-          </div>
-          <div
-            className="video-container reveal"
-            style={{
-              position: 'relative',
-              borderRadius: '24px',
-              overflow: 'hidden',
-              boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
-              aspectRatio: '9/16',
-              background: '#000',
-              cursor: 'pointer',
-              maxWidth: '360px',
-              margin: '0 auto',
-            }}
-            onClick={() => setIsVideoPlaying(true)}
-          >
-            {!isVideoPlaying ? (
-              <div style={{ width: '100%', height: '100%', position: 'relative' }} className="thumbnail-wrapper">
-                <img
-                  src="/tutor_thumbnail.webp"
-                  alt="Thumbnail Tutorial AsistenToko"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                />
-                <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(0,0,0,0.5)' }}></div>
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    width: '84px',
-                    height: '84px',
-                    background: 'var(--green)',
-                    borderRadius: '50%',
-                    border: '4px solid white',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    boxShadow: '0 0 40px rgba(22, 163, 74, 0.9), 0 8px 32px rgba(0, 0, 0, 0.5)',
-                    transition: 'transform 0.2s ease-in-out',
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1.1)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1)')}
-                >
-                  <svg
-                    width="60"
-                    height="60"
-                    viewBox="0 0 24 24"
-                    fill="white"
-                    xmlns="http://www.w3.org/2000/svg"
-                    style={{ marginLeft: '8px' }}
-                  >
-                    <path d="M7 6v12l11-6z" />
-                  </svg>
-                </div>
-              </div>
-            ) : (
-              <video
-                src="/tutor_asistentoko.mp4"
-                controls
-                autoPlay
-                style={{ width: '100%', height: '100%', objectFit: 'contain', outline: 'none' }}
-              ></video>
-            )}
           </div>
         </div>
       </section>
@@ -1130,7 +1130,7 @@ export default function Home() {
               {/* Price Display */}
               <div className="biz-price-block">
                 <div className="basic-price-row">
-                  <span className="basic-price-amount amber">Rp 149.000</span>
+                  <span className="basic-price-amount amber">Rp 129.000</span>
                   <span className="basic-price-period">/ sekali bayar</span>
                 </div>
                 <div className="biz-price-subnote" style={{ color: '#b45309' }}>
@@ -1146,13 +1146,13 @@ export default function Home() {
                 onClick={() =>
                   handleOpenCheckout(
                     'Paket Basic Lifetime ~ AsistenToko',
-                    'Rp 149.000 / sekali bayar seumur hidup (Banyak Device)',
+                    'Rp 129.000 / sekali bayar seumur hidup (Banyak Device)',
                     CHECKOUT_LINKS.basicLifetime,
                     'Paket Basic Lifetime'
                   )
                 }
               >
-                Beli Paket Basic Lifetime (Rp 149.000)
+                Beli Paket Basic Lifetime (Rp 129.000)
               </button>
 
               <div className="biz-divider"></div>
@@ -1453,7 +1453,7 @@ export default function Home() {
               </button>
               <div className="faq-body">
                 <p className="faq-ans">
-                  <strong>Paket Basic Lifetime (Rp 149.000)</strong> adalah paket beli putus sekali bayar seumur hidup tanpa tagihan bulanan berulang, sudah mendukung login <strong>Banyak Device</strong> (Laptop, Tablet, HP), kasir cepat, struk bluetooth, dan buku kasbon. Sedangkan <strong>Paket Business (mulai Rp 99.000/bulan)</strong> adalah solusi terlengkap untuk toko berkembang yang mengelola <strong>Banyak Cabang Toko</strong> dalam 1 akun, butuh fitur staf kasir &amp; staf gudang terpisah dengan PIN masing-masing, proteksi rahasia modal (HPP) &amp; laba bersih dari kasir, rekap shift kasir, dan AI Vision Scan tanpa batas.
+                  <strong>Paket Basic Lifetime (Rp 129.000)</strong> adalah paket beli putus sekali bayar seumur hidup tanpa tagihan bulanan berulang, sudah mendukung login <strong>Banyak Device</strong> (Laptop, Tablet, HP), kasir cepat, struk bluetooth, dan buku kasbon. Sedangkan <strong>Paket Business (mulai Rp 99.000/bulan)</strong> adalah solusi terlengkap untuk toko berkembang yang mengelola <strong>Banyak Cabang Toko</strong> dalam 1 akun, butuh fitur staf kasir &amp; staf gudang terpisah dengan PIN masing-masing, proteksi rahasia modal (HPP) &amp; laba bersih dari kasir, rekap shift kasir, dan AI Vision Scan tanpa batas.
                 </p>
               </div>
             </div>
